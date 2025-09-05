@@ -1,0 +1,188 @@
+ .titulo_form {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        
+    }
+
+    form {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 20px auto;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        color: #34495e;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="file"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #004080;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 8px;
+    }
+
+    input[type="submit"] {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 15px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+    h2 {
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    p {
+        text-align: center;
+        color: #555;
+    }
+
+    a {
+        color: #004080;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .contenedor{
+   width: 100;
+   height: 100;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 150px;
+   
+}
+
+.form-1{
+    width: 100;
+    max-width: 450px;
+    background-color:#1a5276;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 30px;
+}
+.form-1 h1{
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.form-3{
+    background-color:#1a5276;
+    margin: 15px 0;
+    border-radius: 2px;
+    align-items: center;
+    display:inline-block;
+    transition: max-height 05s;
+    overflow: hidden;
+}
+
+.form-1 h1::after{
+    content: " ";
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #727272;
+    position: absolute;
+    bottom: -12px;
+    left: 50px;
+    transform: translateX(-50%);
+    margin-left: 120px;
+    
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0,0,0,0.1);
+    margin: 0;
+    padding: 40px;
+}
+
+.titulo_form {
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsla(0, 0%, 49%, 0.877);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+input[type="submit"] {
+    background-color: hsl(203, 94%, 12%);
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
