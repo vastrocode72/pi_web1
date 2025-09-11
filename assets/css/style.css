@@ -1,3 +1,7 @@
+/* --------------------
+VARIABLES GLOBALES (colores, fuentes)
+-------------------- */
+
 :root {
   --color-primary: #005F73;
   --color-secondary: #030027;
@@ -7,9 +11,13 @@
   --color-text-light: #EEEEEE;
 
   --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Merriweather', serif;
+  --font-heading: 'Merriweather', serif;
 }
 
+
+/* --------------------
+ESTILOS BASE (body, tipografías generales)
+-------------------- */
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -17,18 +25,27 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-  }
-  
+}
 
-h1{
+
+/* --------------------
+ENCABEZADOS (h1, h2 selector especial #h2)
+-------------------- */
+
+h1 {
     font-size: 50px;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#h2{
+#h2 {
     text-align: center;
     color: white;
 }
+
+
+/* --------------------
+BANNER (caja principal en la parte superior con imagen de fondo)
+-------------------- */
 
 .banner {
       width: 100%;
@@ -43,7 +60,12 @@ h1{
       font-size: 100px;
 }
 
-.card{
+
+/* --------------------
+TARJETAS (clase .card)
+-------------------- */
+
+.card {
     width: 250px;
     height: 300px;
     padding: 10px;
@@ -54,7 +76,6 @@ h1{
     background-color:#1a5276;
     text-align: center;
 }
-
 
 .card:hover {
     transform: translateY(-10px);
@@ -67,10 +88,20 @@ h1{
   border-radius: 100%;
 }
 
+
+/* --------------------
+IMÁGENES REUTILIZABLES (clase .imagenes)
+-------------------- */
+
 .imagenes img {
     width: 100%;
     border-radius: 10px;
 }
+
+
+/* --------------------
+CONTENIDOS DE TARJETA (clase .contenido)
+-------------------- */
 
 .contenido h1 {
     font-size: 18px;
@@ -84,22 +115,36 @@ h1{
     margin: 5px 0;
     text-align: justify;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
-ul{
+
+/* --------------------
+LISTAS (ul)
+-------------------- */
+
+ul {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10px;
 }
 
-.titulo1{
+
+/* --------------------
+TITULOS GRANDES (clase .titulo1)
+-------------------- */
+
+.titulo1 {
     text-align: center;
     color: whitesmoke;
     font-size: 50px;
     text-shadow: 2px 2px 5px hsl(0, 8%, 91%);
 }
 
-nav ul{
+
+/* --------------------
+NAVEGACIÓN (nav ul y links)
+-------------------- */
+
+nav ul {
     justify-content: center;
     font-size: 25px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -109,20 +154,36 @@ nav ul{
     margin: 0;
     align-content: center;
     background-color: white;
-
 }
-
 
 nav ul li a {
     text-decoration: none;
     padding: 10px 15px;
     display: block;  
-  }
+}
 
-  #section1{
+
+/* --------------------
+SECCIONES (section1, section2)
+-------------------- */
+
+#section1 {
     background-color: gray;
     margin-top: 5px;
-  }
+}
+
+#section2 {
+    background-color: #dedede;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    padding: 10px;
+}
+
+
+/* --------------------
+FOOTER (contenedor y sus subpartes)
+-------------------- */
 
 .footer__container {
     font-size: 20px;
@@ -135,28 +196,12 @@ nav ul li a {
     padding: 0 var(--container-padding);
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
-.footer__info {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer__logo {
-    color: var(--text-white);
-    margin-bottom: var(--spacing-sm);
-}
-
-.footer__text {
-    color: var(--text-light);
-}
-
-.footer__links, .footer__contact {
-    flex: 1;
-    min-width: 200px;
-    color: white;
-}
+.footer__info { flex: 1; min-width: 250px; }
+.footer__logo { color: var(--text-white); margin-bottom: var(--spacing-sm); }
+.footer__text { color: var(--text-light); }
+.footer__links, .footer__contact { flex: 1; min-width: 200px; color: white; }
 
 .footer__heading {
     color: var(--text-white);
@@ -164,26 +209,45 @@ nav ul li a {
     color: white;  
 }
 
-
-.footer__nav{
+.footer__nav {
     color: white;
     list-style: none;
     padding: 0;
     text-align: center;
     text-decoration: none;
-    
 }
 
-.footer__nav img{
+.footer__nav img {
     height: 30px;
     right: 30px;
     align-items: center;
     padding-right: 5px;
     margin-top: 5px;
-    
-   
-   
 }
+
+.footer__nav a { color: var(--text-light); }
+.footer__contact p { color: var(--text-light); margin-bottom: var(--spacing-sm); }
+
+.footer__contact {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white ;
+    font-size: 15px;
+}
+
+.footer__bottom {
+    text-align: center;
+    padding: 10px;
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #1a5276;
+}
+
+.pie_pagina { color: white; }
+
+
+/* --------------------
+ABOUT / SOBRE NOSOTROS (estructuras con imagen y texto)
+-------------------- */
 
 .about__content {
   display: flex;
@@ -193,80 +257,40 @@ nav ul li a {
   flex-wrap: wrap;
 }
 
-.about__text-content {
-  flex: 1;
-  text-align: left;
-}
-
-.about__image {
-  flex: 1;
-  text-align: center;
-}
-
-.about__image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
+.about__text-content { flex: 1; text-align: left; }
+.about__image { flex: 1; text-align: center; }
+.about__image img { max-width: 100%; height: auto; border-radius: 12px; }
 
 
+/* --------------------
+HEADER y estilo de página (header, .page-header)
+-------------------- */
 
-.footer__nav a {
-    color: var(--text-light);
-}
-
-
-.footer__contact p {
-    color: var(--text-light);
-    margin-bottom: var(--spacing-sm);
-}
-
-.footer__contact{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white ;
-    font-size: 15px;
-}
-.footer__bottom {
-    text-align: center;
-    padding: 10px;
-    margin-top: var(--spacing-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #1a5276;
-
-}
-
-.pie_pagina{
-    color: white;
-}
-
-
-#section2{
-    background-color: #dedede;
-    width: 100%;
-    height: 100%;
-    align-content: center;
-    padding: 10px;
-    
-
-}
-
-
-
-  header {
+header {
     background-color: #1a5276;
     color: white;
     padding: 1.5rem;
     margin-top: 50px;
     text-align: center;
-  }
+}
+header h2 { color: #ffffff; }
 
-  header h2 {
-    color: #ffffff; /* O 'white' */
+.page-header {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 40px;
 }
 
-  
+.page-header__container { max-width: 960px; margin: 0 auto; }
+.team__title { font-size: 2.8em; color: #333333; margin-bottom: 10px; }
+.page-header__text { font-size: 1.2em; color: #666666; line-height: 1.5; }
+/* --------------------
+PASOS / STEP (lista de pasos estilizados)
+-------------------- */
 
-  .container {
+.container {
     width: 100%;
     display: flex;
     align-items: center;
@@ -276,7 +300,7 @@ nav ul li a {
     gap:20px;
 }
 
-  .step {
+.step {
     background-color: white;
     border-left: 5px solid #004080;
     padding: 1.5rem;
@@ -285,52 +309,70 @@ nav ul li a {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     display: flex;
     align-items: flex-start;
-    
-  }
-  
-  .step i {
+}
+
+.step i {
     font-size: 2rem;
     color: #004080;
     margin-right: 1rem;
     min-width: 2rem;
-  }
-  
-  .step h2 {
+}
+
+.step h2 {
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
     color: #004080;
-  }
-  
-  .step p {
+}
+
+.step p {
     margin: 0;
-  }
-  
-  footer {
+}
+
+
+/* --------------------
+FOOTER (elemento footer general)
+-------------------- */
+
+footer {
     background-color: #1a5276;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-  }
-  
-  a {
+}
+
+
+/* --------------------
+ENLACES (a)
+-------------------- */
+
+a {
     color: #004080;
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     text-decoration: underline;
-  }
-    
-  .titulo  {
+}
+
+
+/* --------------------
+TÍTULO EN SECCIONES (.titulo)
+-------------------- */
+
+.titulo  {
     text-align: center;
     font-size: 30px;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     margin-top: 20px;
-    
-  }
-  
-  .bordes {
+}
+
+
+/* --------------------
+TABLAS ESTILIZADAS (.bordes)
+-------------------- */
+
+.bordes {
     width: 60%;
     border-collapse: collapse;
     border-radius: 10px;
@@ -338,43 +380,68 @@ nav ul li a {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     background-color:white;
     border: 2px solid #004080;
-    
-  }
-  
-  .bordes thead {
+}
+
+.bordes thead {
     background-color: #004080(51 75% 5%);
     color: #004080;
-    
-  }
-  
-  .bordes th {
+}
+
+.bordes th {
     padding: 10px 10px;
     border: 1px solid #1a5276;
     text-align: center;
-  }
+}
 
-  .bordes td {
+.bordes td {
     padding: 10px 10px;
     border: 1px solid #1a5276 ;
     text-align: left;
-  }
-  
-  .bordes tr:nth-child(even) {
+}
+
+.bordes tr:nth-child(even) {
     background-color: #1a5276;
-    
-  }
-  
-  .bordes tr:hover {
+}
+
+.bordes tr:hover {
     background-color: #c0c8c8;
-  
-  }
+}
 
-  .texto{
+
+/* --------------------
+TEXTOS REUTILIZABLES (.texto)
+-------------------- */
+
+.texto {
     font-family:Arial, Helvetica, sans-serif;
+}
 
-  }
+.texto {
+    display: flex;
+    align-items: center;
+    width: 90%px;
+    margin: 20px auto;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+}
 
-  .whatsapp-btn {
+.texto img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+}
+
+.texto p {
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: justify;
+}
+/* --------------------
+BOTÓN FLOTANTE WHATSAPP (.whatsapp-btn)
+-------------------- */
+
+.whatsapp-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -386,99 +453,95 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     animation: breathe 2s ease-in-out infinite;
-    
-  }
-  
-  .whatsapp-btn img {
+}
+
+.whatsapp-btn img {
     width: 50px;
     margin-right: 10px;
-  }
+}
 
-  .whatsapp-btn img:hover{
+.whatsapp-btn img:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-    }
-   
+}
 
-   .titulo_form {
+
+/* --------------------
+FORMULARIO (títulos, inputs, labels)
+-------------------- */
+
+.titulo_form {
         text-align: center;
         color: #2c3e50;
         margin-bottom: 30px;
-        
-    }
+}
 
-    form {
-        background-color: #ffffff;
-        padding: 20px 30px;
-        border-radius: 10px;
-        max-width: 500px;
-        margin: 20px auto;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+form {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #34495e;
+    font-weight: bold;
+}
 
-    label {
-        display: block;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        color: #34495e;
-        font-weight: bold;
-    }
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #004080;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
-    input[type="text"],
-    input[type="date"],
-    input[type="tel"],
-    input[type="email"],
-    input[type="file"],
-    select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #004080;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+}
 
-    input[type="radio"],
-    input[type="checkbox"] {
-        margin-right: 8px;
-    }
+input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-    input[type="submit"] {
-        background-color: #3498db;
-        color: white;
-        padding: 10px 15px;
-        margin-top: 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
 
-    input[type="submit"]:hover {
-        background-color: #2980b9;
-    }
+h2 {
+    text-align: center;
+    color: #2c3e50;
+}
 
-    h2 {
-        text-align: center;
-        color: #2c3e50;
-    }
+p {
+    text-align: center;
+    color: #555;
+}
 
-    p {
-        text-align: center;
-        color: #555;
-    }
 
-    a {
-        color: #004080;
-        text-decoration: none;
-    }
+/* --------------------
+CONTENEDORES / FORMULARIO-TARJETA (.contenedor, .form-1, .form-3)
+-------------------- */
 
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .contenedor{
+.contenedor {
    width: 100;
    height: 100;
    display: flex;
@@ -486,10 +549,9 @@ nav ul li a {
    justify-content: center;
    margin-top: 150px;
    flex-wrap: nowrap;
-   
 }
 
-.form-1{
+.form-1 {
     width: 100;
     max-width: 450px;
     background-color:#1a5276;
@@ -497,7 +559,8 @@ nav ul li a {
     text-align: center;
     border-radius: 30px;
 }
-.form-1 h1{
+
+.form-1 h1 {
     font-size: 30px;
     margin-bottom: 30px;
     color: white;
@@ -505,7 +568,7 @@ nav ul li a {
     position: relative;
 }
 
-.form-3{
+.form-3 {
     background-color:#1a5276;
     margin: 15px 0;
     border-radius: 2px;
@@ -515,7 +578,7 @@ nav ul li a {
     overflow: hidden;
 }
 
-.form-1 h1::after{
+.form-1 h1::after {
     content: " ";
     width: 30px;
     height: 4px;
@@ -526,12 +589,12 @@ nav ul li a {
     left: 50px;
     transform: translateX(-50%);
     margin-left: 120px;
-    
 }
 
 
-
-
+/* --------------------
+REDEFINICIONES DE FORMULARIO (segunda aparición de .titulo_form, label, inputs)
+-------------------- */
 
 .titulo_form {
     text-align: center;
@@ -569,7 +632,6 @@ select {
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 8px;
-
 }
 
 input[type="submit"]:hover {
@@ -587,7 +649,6 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-
 h2 {
     text-align: center;
     color: black;
@@ -599,8 +660,11 @@ p {
     color: black;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
+/* --------------------
+BARRA SUPERIOR y LOGO (.barra-superior, .logo)
+-------------------- */
 
-.barra-superior{
+.barra-superior {
     padding: 10px 20px;
     margin-left:10px;
     text-align: right;
@@ -608,40 +672,50 @@ p {
     display: flex;
     flex-direction: row-reverse;
     align-items: end;
-    
 }
 
-
-
-.barra-superior a{
+.barra-superior a {
     color: #005F73;
     text-decoration: none;
     font-weight: bold;
     display:flex;
     height: 30px;
     width: 150px;
-
 }
 
-.logo img{
+.logo img {
     width: 100px;
     height: 100px;
     float:left;
     margin-top: -50px;
-    
 }
 
-.carousel-inner img{
+
+/* --------------------
+CAROUSEL (imágenes dentro de carrusel)
+-------------------- */
+
+.carousel-inner img {
    margin-top:30px;
    height: 500px;
    width: 250px;
 }
 
-.PQR{
+
+/* --------------------
+PQR (clase simple para texto de atención o botones)
+-------------------- */
+
+.PQR {
     color: white;
 }
-  
-.texto{
+
+
+/* --------------------
+SECCIÓN TEXTO 
+-------------------- */
+
+.texto {
     display: flex;
     align-items: center;
     width: 90%px;
@@ -649,20 +723,22 @@ p {
     padding: 20px;
     gap: 20px;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-      
 }
 
 .texto img {
       width: 200px;
       height: auto;
       border-radius: 10px;
-    }
+}
 
-    .texto p {
+.texto p {
       font-size: 16px;
       line-height: 1.5;
       text-align: justify;
-    }
+}
+/* --------------------
+BOTONES PRINCIPALES (.boton)
+-------------------- */
 
 .boton {
       background-color: #3498db;   
@@ -678,21 +754,22 @@ p {
       height: 100px;
       display: flex;
       background-color:  #007bff;
-    }
+}
 
-    .boton:hover {
+.boton:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 
+/* --------------------
+REPETICIONES Y COMPONENTES (varias clases reutilizadas)
+-------------------- */
 
 .imagenes img {
     width: 100%;
     border-radius: 10px;
 }
-
-
 
 .about__content {
   display: flex;
@@ -702,21 +779,9 @@ p {
   flex-wrap: wrap;
 }
 
-.about__text-content {
-  flex: 1;
-  text-align: left;
-}
-
-.about__image {
-  flex: 1;
-  text-align: center;
-}
-
-.about__image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
+.about__text-content { flex: 1; text-align: left; }
+.about__image { flex: 1; text-align: center; }
+.about__image img { max-width: 100%; height: auto; border-radius: 12px; }
 
 .centered-container {
   display: flex;
@@ -724,13 +789,16 @@ p {
   align-items: center;
 }
 
+
+/* --------------------
+TARJETAS DE INICIO (.cardinicio)
+-------------------- */
+
 .cardinicio {
-   
     background-color: #5b97bd;
     border: 1px solid #e0e0e0; 
     border-radius: 15px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
-    /* Espaciado y dimensiones */
     margin: 20px; 
     padding: 20px; 
     width: 300px; 
@@ -739,7 +807,6 @@ p {
     align-items: center; 
     text-align: center; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
 }
 
 .cardinicio .imagenes img {
@@ -762,11 +829,13 @@ p {
     margin-bottom: 5px; 
 }
 
-
 .cardinicio:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
+/* --------------------
+BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
+-------------------- */
 
 .comoaplicartarjetas {
     display: flex;
@@ -777,20 +846,19 @@ p {
     margin: 0 auto; 
 }
 
-
 .comoaplicartarjetas .step {
     background-color: #ffffff;     
     border: 1px solid #e0e0e0; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
     padding: 25px; 
-    
-    width: 80%;     max-width: 800px; 
+    width: 80%;     
+    max-width: 800px; 
     min-width: 280px; 
-    
     text-align: center; 
     display: flex;
-    flex-direction: column;     align-items: center; 
+    flex-direction: column;     
+    align-items: center; 
     transition: transform 0.2s ease-in-out; 
 }
 
@@ -798,20 +866,17 @@ p {
     transform: translateY(-5px); 
 }
 
-
 .comoaplicartarjetas .step i {
     font-size: 3em; 
     color: #007bff; 
     margin-bottom: 15px; 
 }
 
-
 .comoaplicartarjetas .step h2 {
     font-size: 1.5em; 
     color: #333333; 
     margin-bottom: 10px; 
 }
-
 
 .comoaplicartarjetas .step p {
     font-size: 1em; 
@@ -820,33 +885,10 @@ p {
 }
 
 
-.page-header {
-    background-color: #f8f8f8;
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
-    margin-bottom: 40px;
+/* --------------------
+CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
+-------------------- */
 
-}
-
-.page-header__container {
-    max-width: 960px;
-    margin: 0 auto;
-
-    
-}
-
-.team__title {
-    font-size: 2.8em;
-    color: #333333;
-    margin-bottom: 10px;
-}
-
-.page-header__text {
-    font-size: 1.2em;
-    color: #666666;
-    line-height: 1.5;
-}
 .contenedor-tarjetas {
     width: 100%;
     display: flex;
@@ -860,7 +902,7 @@ p {
 }
 
 .cardinicio {
-    background-color: #5b97bd;;
+    background-color: #5b97bd;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -923,6 +965,9 @@ p {
     overflow-x: auto;
     flex-direction: row;
 }
+/* --------------------
+TARJETAS DE EQUIPO (.team-card)
+-------------------- */
 
 .team-card {
     background-color: #5b97bd;
@@ -969,6 +1014,11 @@ p {
     font-weight: 500;
 }
 
+
+/* --------------------
+WELCOME / CONTAINER SENTENCIAS FINALES 
+-------------------- */
+
 .centered-container {
     display: flex;
     justify-content: center;
@@ -989,4 +1039,4 @@ p {
     text-align: center; 
     line-height: 1.6; 
     font-size: large;
-  }
+}
