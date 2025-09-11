@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@100..900&family=Story+Script&display=swap');
+
+
 /* --------------------
 VARIABLES GLOBALES (colores, fuentes)
 -------------------- */
@@ -15,8 +18,9 @@ VARIABLES GLOBALES (colores, fuentes)
   --color-text-dark: #1A1A1A;
   --color-text-light: #EEEEEE;
 
-  --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Merriweather', serif;
+  --font-body: 'Roboto Slab', serif;
+  --font-heading: 'story script', cursive;
+  --font-footer: 'lobster', cursive;
 }
 
 
@@ -25,7 +29,7 @@ ESTILOS BASE (body, tipografías generales)
 -------------------- */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     background-color: #F8F8F8;
     margin: 0;
     padding: 0;
@@ -37,15 +41,13 @@ body {
 ENCABEZADOS (h1, h2 selector especial #h2)
 -------------------- */
 
-h1 {
+h1, h2, h3{
     font-size: 50px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: var(--font-heading)
+    
 }
 
-#h2 {
-    text-align: center;
-    color: white;
-}
+
 
 
 /* --------------------
@@ -1047,6 +1049,6 @@ WELCOME / CONTAINER SENTENCIAS FINALES
     flex-direction: column; 
     align-items: center; 
     font-size: large;
-    position: relative; /* o absolute, fixed, etc. */
+    position: relative; 
     z-index: 90;
 }
