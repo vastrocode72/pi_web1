@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link rel="icon" type="image/png" href="assets/IMAGENES/logo.png">
+    <link rel="icon" type="image/png" href="assets/imagenes/logo.png">
     <title>SGB HUB</title>
 </head>
 <body>
-
+    <!-- Parte blanca superior -->
     <div>
             <div class="barra-superior ">
                 <a href="pages/inicio_sesion.html" >Iniciar sesión</a>
@@ -42,40 +43,31 @@
         </header>
     </div>
 
-     <!-- Carrusel -->
-   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-container">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-        <img src="assets/IMAGENES/Becas.png" class="d-block w-100" alt="...">
+            </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
     </div>
+</div>
 
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="assets/IMAGENES/articles-415819_foto_g.jpg" class="d-block w-100" alt="..." >
-    </div>
-
-    <div class="carousel-item">
-      <img src="assets/IMAGENES/Becas2.jpg" class="d-block w-100" alt="...">
-    </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-
+  <!-- Mensaje bienvenida -->
     <div class="welcome-container">
-        <h3>Bienvenido a SGB HUB, tu sistema de gestión de becas virtual, acá encontrarás nuevas oportunidades, el formulario a través del cual podrás aplicar a ellas y el inicio de sesión en caso de que necesites una consulta distinta, ¡bienvenido!</h3>
+        <p>Bienvenido a SGB HUB, tu sistema de gestión de becas virtual, acá encontrarás nuevas oportunidades, el formulario a través del cual podrás aplicar a ellas y el inicio de sesión en caso de que necesites una consulta distinta, ¡bienvenido!</p>
     </div>
 
    <!-- Tarjetas -->
     <div class="contenedor-tarjetas">
         <div class="cardinicio">
             <div class="imagenes">
-                <img src="assets/IMAGENES/calendar1.jpg" width="200px" alt="">
+                <img src="assets/imagenes/calendario_1.jpg" width="200px" alt="">
             </div>    
             <div class="contenido">
                 <h1>Listado 2022</h1>
@@ -86,7 +78,7 @@
         
         <div class="cardinicio">
             <div class="imagenes">
-                <img src="assets/IMAGENES/calendar2.jpg" width="200px" alt="">
+                <img src="assets/imagenes/calendario_2.jpg" width="200px" alt="">
             </div>
             <div class="contenido">
 
@@ -98,7 +90,7 @@
 
         <div class="cardinicio">
             <div class="imagenes">
-                <img src="assets/IMAGENES/calendar3.jpg" width="200px" alt="">
+                <img src="assets/imagenes/calendario_3.jpg" width="200px" alt="">
             </div>
             <div class="contenido">
                 <h1>Listado 2024</h1>
@@ -131,12 +123,13 @@
                 <p>Teléfono: (123)456-7890</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScCAej2W1LedgOui0IZq6YsrLQzyOsXl59cW-TtmocQ3AEpLA/viewform?usp=header " class="PQR">Registra una PQR</a>         
         </div>
+
         <div class="footer__contact">
             <h4 class="footer__heading">Redes sociales </h4>
-                    <ul class="footer__nav">
-                        <a href="https://www.instagram.com/"><img src="assets/IMAGENES/instagram-logo-png-transparent-background-1024x1024-1.png" alt="instagram"></a>
-                        <a href="https://www.facebook.com/?locale=es_LA"><img src="assets/IMAGENES/vecteezy_facebook-png-icon_16716481.png" alt="facebook"></a>
-                        <a href="https://x.com/i/flow/login?lang=es"><img src="assets/IMAGENES/sl_z_072523_61700_01.jpg" alt="x"></a>
+                    <ul class="footer__nav img">
+                        <a href="https://www.instagram.com/"><img src="assets/imagenes/logo_instagram.png" alt="instagram"></a>
+                        <a href="https://www.facebook.com/?locale=es_LA"><img src="assets/imagenes/logo_facebook.png" alt="facebook"></a>
+                        <a href="https://x.com/i/flow/login?lang=es"><img src="assets/imagenes/Logo X.jpg" alt="x"></a>
                     </ul>
             <p class="pie_pagina">&copy; 2025 Sistema de gestión de becas. Todos los derechos reservados.</p>
         </div>
@@ -145,7 +138,9 @@
     </section>
 
     <!-- Boton Flotante -->
-    <a href="https://wa.me/+573226650351" class="whatsapp-btn" target="_blank">
+    <div>
+        <a href="https://wa.me/+573226650351" class="whatsapp-btn" target="_blank">
         <img src="assets/IMAGENES/whatsapp_PNG95147.png" alt="icono whatsapp">
+    </div>  
 </body>
 </html>

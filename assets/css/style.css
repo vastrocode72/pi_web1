@@ -2,6 +2,11 @@
 VARIABLES GLOBALES (colores, fuentes)
 -------------------- */
 
+.carousel-container {
+    width: 50%; /* Reduce el ancho al 50% */
+    margin: 0 auto; /* Centra el carrusel horizontalmente */
+}
+
 :root {
   --color-primary: #005F73;
   --color-secondary: #030027;
@@ -894,9 +899,10 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 30px;
     max-width: 960px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 0 20px;
+    gap: 0px auto;
     padding: 20px;
     flex-direction: row;
 }
@@ -1037,6 +1043,10 @@ WELCOME / CONTAINER SENTENCIAS FINALES
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     max-width: 600px; 
     text-align: center; 
-    line-height: 1.6; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
     font-size: large;
+    position: relative; /* o absolute, fixed, etc. */
+    z-index: 90;
 }
