@@ -5,16 +5,10 @@
 VARIABLES GLOBALES (colores, fuentes)
 -------------------- */
 
-.carousel-container {
-    width: 50%; /* Reduce el ancho al 50% */
-    margin: 0 auto; /* Centra el carrusel horizontalmente */
-}
-
 :root {
-  --color-primary: #005F73;
-  --color-secondary: #030027;
-  --color-accent: #CAA8F5;
-  --color-background: #ffffff;
+  --color-primary: #172A3A;
+  --color-secondary: #84C6F4;
+  --color-background: #F7F9FA;
   --color-text-dark: #1A1A1A;
   --color-text-light: #EEEEEE;
 
@@ -30,10 +24,11 @@ ESTILOS BASE (body, tipografías generales)
 
 body {
     font-family: var(--font-body);
-    background-color: #F8F8F8;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
 
@@ -45,26 +40,6 @@ h1, h2, h3{
     font-size: 50px;
     font-family: var(--font-heading)
     
-}
-
-
-
-
-/* --------------------
-BANNER (caja principal en la parte superior con imagen de fondo)
--------------------- */
-
-.banner {
-      width: 100%;
-      height: 300px; 
-      background-image: url(IMAGENES/banner-background-without-image-min.jpg);
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      font-size: 100px;
 }
 
 
@@ -80,7 +55,7 @@ TARJETAS (clase .card)
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color:#1a5276;
+    background-color:var(--color-secondary);
     text-align: center;
 }
 
@@ -94,17 +69,6 @@ TARJETAS (clase .card)
   height: 150px;
   border-radius: 100%;
 }
-
-
-/* --------------------
-IMÁGENES REUTILIZABLES (clase .imagenes)
--------------------- */
-
-.imagenes img {
-    width: 100%;
-    border-radius: 10px;
-}
-
 
 /* --------------------
 CONTENIDOS DE TARJETA (clase .contenido)
@@ -124,13 +88,25 @@ CONTENIDOS DE TARJETA (clase .contenido)
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* --------------------
+IMÁGENES REUTILIZABLES (clase .imagenes)
+-------------------- */
+
+.imagenes img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
 
 /* --------------------
 LISTAS (ul)
 -------------------- */
 
 ul {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     font-size: 10px;
 }
 
@@ -138,13 +114,6 @@ ul {
 /* --------------------
 TITULOS GRANDES (clase .titulo1)
 -------------------- */
-
-.titulo1 {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 50px;
-    text-shadow: 2px 2px 5px hsl(0, 8%, 91%);
-}
 
 
 /* --------------------
@@ -154,17 +123,19 @@ NAVEGACIÓN (nav ul y links)
 nav ul {
     justify-content: center;
     font-size: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: var(--font-heading);
     display: flex;  
     list-style: none;  
     padding: 0;
     margin: 0;
     align-content: center;
-    background-color: white;
+    background-color: var(--color-background);
 }
 
 nav ul li a {
+    display: flex;
     text-decoration: none;
+    color: var(--color-text-dark);
     padding: 10px 15px;
     display: block;  
 }
@@ -237,7 +208,7 @@ FOOTER (contenedor y sus subpartes)
 
 .footer__contact {
     font-family: Arial, Helvetica, sans-serif;
-    color: white ;
+    color: var(--color-text-light);
     font-size: 15px;
 }
 
@@ -246,7 +217,7 @@ FOOTER (contenedor y sus subpartes)
     padding: 10px;
     margin-top: var(--spacing-xl);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #1a5276;
+    background-color: var(--color-primary);
 }
 
 .pie_pagina { color: white; }
@@ -274,19 +245,19 @@ HEADER y estilo de página (header, .page-header)
 -------------------- */
 
 header {
-    background-color: #1a5276;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
     padding: 1.5rem;
     margin-top: 50px;
     text-align: center;
 }
-header h2 { color: #ffffff; }
+header h2 { color: var(--color-text-light); }
 
 .page-header {
-    background-color: #f8f8f8;
+    background-color:var(--color-text-light);
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-text-light);
     margin-bottom: 40px;
 }
 
@@ -342,7 +313,9 @@ FOOTER (elemento footer general)
 -------------------- */
 
 footer {
-    background-color: #1a5276;
+    background-color: var(--color-primary);
+    font-family: var(--font-footer);
+    color: var(--color-text-light);
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
@@ -353,10 +326,7 @@ footer {
 ENLACES (a)
 -------------------- */
 
-a {
-    color: #004080;
-    text-decoration: none;
-}
+
 
 a:hover {
     text-decoration: underline;
@@ -801,45 +771,7 @@ REPETICIONES Y COMPONENTES (varias clases reutilizadas)
 TARJETAS DE INICIO (.cardinicio)
 -------------------- */
 
-.cardinicio {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0; 
-    border-radius: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
-    margin: 20px; 
-    padding: 20px; 
-    width: 300px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.cardinicio .imagenes img {
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    margin-bottom: 15px; 
-}
-
-.cardinicio .contenido h1 {
-    font-size: 1.8em; 
-    color: #0a0a0a; 
-    margin-bottom: 10px; 
-}
-
-.cardinicio .contenido p {
-    font-size: 1em; 
-    color:#0a0a0a; 
-    line-height: 1.5; 
-    margin-bottom: 5px; 
-}
-
-.cardinicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
 /* --------------------
 BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 -------------------- */
@@ -893,7 +825,7 @@ BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 
 
 /* --------------------
-CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
+TARJETAS DEL INDEX
 -------------------- */
 
 .contenedor-tarjetas {
@@ -902,7 +834,7 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
     flex-wrap: nowrap;
     justify-content: center;
     max-width: 960px;
-    margin: 20px auto;
+    margin: 50px auto;
     padding: 0 20px;
     gap: 0px auto;
     padding: 20px;
@@ -910,8 +842,8 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
 }
 
 .cardinicio {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-background);
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 25px;
@@ -924,7 +856,7 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
     align-items: center;
     justify-content: space-between;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    min-height: 380px;
+
 }
 
 .cardinicio:hover {
@@ -940,39 +872,19 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.cardinicio .contenido {
-    width: 100%;
-}
-
 .cardinicio .contenido h1 {
     font-size: 2em;
-    color: #f7f5f5;
+    color: var(--color-text-light);
     margin-bottom: 10px;
 }
 
 .cardinicio .contenido p {
     font-size: 1.1em;
-    color: #eee7e7;
+    color: var(--color-text-light);
     line-height: 1.5;
     margin-bottom: 5px;
 }
 
-.container {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: nowrap;
-    margin-bottom: 20px;
-    gap: 15px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-    overflow-x: auto;
-    flex-direction: row;
-}
 /* --------------------
 TARJETAS DE EQUIPO (.team-card)
 -------------------- */
@@ -1036,9 +948,9 @@ WELCOME / CONTAINER SENTENCIAS FINALES
 }
 
 .welcome-container {
-    background-color: #bad6ee; 
-    color: #0c0c0c; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--color-primary); 
+    color: var(--color-text-light); 
+    font-family: var(--font-footer); 
     padding: 20px;     
     margin: 20px auto; 
     border-radius: 8px; 
