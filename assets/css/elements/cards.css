@@ -1,0 +1,23 @@
+.card {
+    width: 250px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: space-around; /* o "space-between", "center" según prefieras */
+    flex-wrap: wrap; /* Para que se acomoden bien en pantallas pequeñas */
+    gap: 20px; /* Espacio entre tarjetas */
+    padding: 20px;
+    margin-top: 20px;
+}
