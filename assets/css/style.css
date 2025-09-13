@@ -36,7 +36,7 @@ body {
 ENCABEZADOS (h1, h2 selector especial #h2)
 -------------------- */
 
-h1, h2, h3{
+h1, h2, h3, h4, h5, h6{
     font-size: 50px;
     font-family: var(--font-heading)
     
@@ -107,14 +107,9 @@ LISTAS (ul)
 
 ul {
     font-family: var(--font-body);
+    color: var(--color-text-light);
     font-size: 10px;
 }
-
-
-/* --------------------
-TITULOS GRANDES (clase .titulo1)
--------------------- */
-
 
 /* --------------------
 NAVEGACIÓN (nav ul y links)
@@ -161,67 +156,71 @@ SECCIONES (section1, section2)
 
 /* --------------------
 FOOTER (contenedor y sus subpartes)
+/* --------------------
+FOOTER (elemento footer general)
 -------------------- */
 
-.footer__container {
-    font-size: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    gap: var(--spacing-xl);
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+/*
+  Estilos para el footer en general.
+  NO USES flexbox en el footer directamente.
+*/
+.footer {
+  background-color: var(--color-primary);
+  font-family: var(--font-footer);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.footer__info { flex: 1; min-width: 250px; }
-.footer__logo { color: var(--text-white); margin-bottom: var(--spacing-sm); }
-.footer__text { color: var(--text-light); }
-.footer__links, .footer__contact { flex: 1; min-width: 200px; color: white; }
-
-.footer__heading {
-    color: var(--text-white);
-    margin-bottom: var(--spacing-md);
-    color: white;  
+/*
+  Este es el contenedor que hace que las columnas se alineen en fila.
+  Es el único lugar donde necesitas las propiedades de flexbox.
+*/
+.footer-columns {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre las columnas */
+  align-items: flex-start; /* Alinea los ítems en la parte superior */
+  flex-wrap: wrap; /* Permite que las columnas se muevan a una nueva fila en pantallas pequeñas */
+  padding: 20px;
 }
 
-.footer__nav {
-    color: white;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
+footer p {
+  color: #FFFFFF;
 }
 
-.footer__nav img {
-    height: 30px;
-    right: 30px;
-    align-items: center;
-    padding-right: 5px;
-    margin-top: 5px;
+/* Estilos para cada una de las columnas */
+.column {
+  width: 30%;
+  color: var(--color-text-light);
+  text-align: center;
 }
 
-.footer__nav a { color: var(--text-light); }
-.footer__contact p { color: var(--text-light); margin-bottom: var(--spacing-sm); }
-
-.footer__contact {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--color-text-light);
-    font-size: 15px;
+/* Estilos para el texto de copyright */
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.footer__bottom {
-    text-align: center;
-    padding: 10px;
-    margin-top: var(--spacing-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: var(--color-primary);
+/* Estilo para los enlaces de las listas */
+.column ul {
+  list-style: none;
+  padding: 0;
+
 }
 
-.pie_pagina { color: white; }
+.column a {
+  color: var(--color-text-light); /* Asumiendo que esta es tu variable de color */
+  text-decoration: none;
+}
 
+/* Estilos para las imágenes de redes sociales */
+.social-links img {
+  height: 30px;
+  padding: 0 5px; /* Espacio entre las imágenes */
+  margin-top: 5px;
+}
 
 /* --------------------
 ABOUT / SOBRE NOSOTROS (estructuras con imagen y texto)
@@ -307,27 +306,6 @@ PASOS / STEP (lista de pasos estilizados)
     margin: 0;
 }
 
-
-/* --------------------
-FOOTER (elemento footer general)
--------------------- */
-
-footer {
-    background-color: var(--color-primary);
-    font-family: var(--font-footer);
-    color: var(--color-text-light);
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-
-/* --------------------
-ENLACES (a)
--------------------- */
-
-
-
 a:hover {
     text-decoration: underline;
 }
@@ -389,31 +367,7 @@ TABLAS ESTILIZADAS (.bordes)
 TEXTOS REUTILIZABLES (.texto)
 -------------------- */
 
-.texto {
-    font-family:Arial, Helvetica, sans-serif;
-}
 
-.texto {
-    display: flex;
-    align-items: center;
-    width: 90%px;
-    margin: 20px auto;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-}
-
-.texto img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-}
-
-.texto p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: justify;
-}
 /* --------------------
 BOTÓN FLOTANTE WHATSAPP (.whatsapp-btn)
 -------------------- */
@@ -617,7 +571,7 @@ input[type="submit"]:hover {
 
 input[type="submit"] {
     background-color: hsl(203, 94%, 12%);
-    color: white;
+    color: var(--color-text-light);
     padding: 10px 15px;
     margin-top: 20px;
     border: none;
@@ -626,17 +580,6 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-h2 {
-    text-align: center;
-    color: black;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-
-p {
-    text-align: center;
-    color: black;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
 /* --------------------
 BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 -------------------- */
@@ -668,51 +611,7 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 }
 
 
-/* --------------------
-CAROUSEL (imágenes dentro de carrusel)
--------------------- */
 
-.carousel-inner img {
-   margin-top:30px;
-   height: 500px;
-   width: 250px;
-}
-
-
-/* --------------------
-PQR (clase simple para texto de atención o botones)
--------------------- */
-
-.PQR {
-    color: white;
-}
-
-
-/* --------------------
-SECCIÓN TEXTO 
--------------------- */
-
-.texto {
-    display: flex;
-    align-items: center;
-    width: 90%px;
-    margin: 20px auto;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-}
-
-.texto img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-}
-
-.texto p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: justify;
-}
 /* --------------------
 BOTONES PRINCIPALES (.boton)
 -------------------- */
@@ -813,13 +712,13 @@ BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 
 .comoaplicartarjetas .step h2 {
     font-size: 1.5em; 
-    color: #333333; 
+    color: var(--color-text-light); 
     margin-bottom: 10px; 
 }
 
 .comoaplicartarjetas .step p {
     font-size: 1em; 
-    color: #666666; 
+    color: var(--color-text-light); 
     line-height: 1.6;
 }
 
@@ -829,34 +728,33 @@ TARJETAS DEL INDEX
 -------------------- */
 
 .contenedor-tarjetas {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    max-width: 960px;
-    margin: 50px auto;
-    padding: 0 20px;
-    gap: 0px auto;
-    padding: 20px;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  max-width: 960px;
+  margin: 50px auto;
+  padding: 20px;
+  flex-direction: row;
+  gap: 25px;
 }
 
+/* El resto de tu código para .cardinicio permanece igual, pero ya no necesitas margin */
 .cardinicio {
-    background-color: var(--color-primary);
-    border: 1px solid var(--color-background);
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    text-align: center;
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-background);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  flex: 1 1 calc(50% - 40px);
+  max-width: calc(50% - 40px);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .cardinicio:hover {
