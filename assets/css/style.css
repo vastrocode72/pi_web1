@@ -13,7 +13,7 @@ VARIABLES GLOBALES (colores, fuentes)
   --color-text-light: #EEEEEE;
 
   --font-body: 'Roboto Slab', serif;
-  --font-heading: 'story script', cursive;
+  --font-heading: 'Epunda Slab', cursive;
   --font-footer: 'lobster', cursive;
 }
 
@@ -280,7 +280,7 @@ PASOS / STEP (lista de pasos estilizados)
 
 .step {
     background-color: white;
-    border-left: 5px solid #004080;
+    border-left: 5px solid var(--color-primary);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
