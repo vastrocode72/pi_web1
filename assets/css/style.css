@@ -247,7 +247,7 @@ header {
     background-color: var(--color-primary);
     color: var(--color-text-light);
     padding: 1.5rem;
-    margin-top: 50px;
+
     text-align: center;
 }
 header h2 { color: var(--color-text-light); }
@@ -585,17 +585,17 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 -------------------- */
 
 .barra-superior {
+    background-color: var(--color-primary);
     padding: 10px 20px;
-    margin-left:10px;
     text-align: right;
-    margin-top: 10px;
     display: flex;
     flex-direction: row-reverse;
     align-items: end;
+    height: 100%;
 }
 
 .barra-superior a {
-    color: #005F73;
+    color: var(--color-text-light);
     text-decoration: none;
     font-weight: bold;
     display:flex;
