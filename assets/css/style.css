@@ -8,12 +8,12 @@ VARIABLES GLOBALES (colores, fuentes)
 :root {
   --color-primary: #172A3A;
   --color-secondary: #84C6F4;
-  --color-background: #F7F9FA;
+  --color-background: #FDF5E6;
   --color-text-dark: #1A1A1A;
   --color-text-light: #EEEEEE;
 
   --font-body: 'Roboto Slab', serif;
-  --font-heading: 'Epunda Slab', cursive;
+  --font-heading: 'Archivo Black', cursive;
   --font-footer: 'lobster', cursive;
 }
 
