@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de inscripción</title>
+</head>
+<body>
+    <div class="barra-superior">
+            <a href="../Sistema_de_becas-main/inicio_sesion.html">Iniciar sesión</a>
+            </div>
+    <header>
+            
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+             <li><a href="comoaplicar.html">Como aplicar</a></li>
+             <li><a href="cronograma.html">Cronograma</a></li>
+        </ul>
+    </nav>
+    <br>
+</header>
+   <h1 class="titulo_form">FORMULARIO DE INSCRIPCION</h1>
+    
+    <form action="" method="post">
+        <label for="name">Nombres</label>
+        <input type="text" name="name" id="name" placeholder="Digite su nombre" required>
+        <br><br>
+        <label for="name">Apellidos</label>
+        <input type="text" name="name" id="name" placeholder="Digite su apellido" required>
+        <br><br>
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input type="date" name="nacimiento" id="nacimiento" required>
+        <br><br>
+        <label for="text">Genero</label><br><br>
+        <input type="radio" name="Genero" value="1">Hombre
+        <input type="radio" name="Genero" id="2">Mujer
+        <br><br>
+        <label for="direccion">Direccion</label>
+        <input type="text" name="direccion" id="direccion">
+        <br><br>
+        <label for="contacto">Número de contacto</label>
+        <input type="tel" name="contacto" id="contacto" maxlength="10"  placeholder="Digite su número de contacto" required>
+        <br><br>
+        <label for="email">Correo Elctronico</label>
+        <input type="email" name="Correo" id="email" required>
+        <br><br>
+        <label for="Escuela">Seleccione su Institución Educativa</label>
+        <select name="Escuela" id="Escuela">
+            <option value="value">Seleccione una opción</option>
+            <option value="IE">Institución Educativa Hernan Villa Baena</option>
+            <option value="IE">Institución Educativa Cefa</option>
+            <option value="IE">Institución Educativa Tulio Ospina</option>
+            <option value="IE">Institución Educativa El Carmelo</option>
+            <option value="IE">Institución Educativa Carmelitano</option>
+            <option value="IE">Institución Educativa Fe y Alegria</option>
+            <option value="IE">Institución Educativa Mano Amiga</option>
+            <option value="IE">Institución Educativa Liceo Antioqueño</option>
+        </select><br><br>
+        <label>
+            <input type="checkbox" name="Terminos" required> Acepto los términos y condiciones
+        </label><br><br>
+        
+<h2>Adjuntar documentos</h2><br>
+    <form action="/subir-archivos" method="post" enctype="multipart/form-data">
+        <label for="archivo">Seleccione uno o más archivos</label>
+        <input type="file" id="archivos" name="archivos" accept=".pdf, .doc, .xls, xlsx" multiple><br><br>
+        <input type="submit" value="Subir"><br><br>
+        <input type="submit" value="Enviar solicitud">
+    </form>
+    <h2>CONTACTANOS </h2><br>
+        <p>¿Tienes dudas? Contactanos <a href="https://wa.me/+573226650351">Nuestro equipo</a></p>  
+    </form><br><br>
+     <footer>
+    <p>© 2025 Guía de Becas Estudiantiles en Nuestra Institución</p>
+  </footer>
+  <a href="https://wa.me/+573226650351" class="whatsapp-btn" target="_blank">
+        <img src="../Sistema_de_becas-main/IMAGENES/whatsapp_PNG95147.png" alt="icono whatsapp">
+</body>
+</html>
