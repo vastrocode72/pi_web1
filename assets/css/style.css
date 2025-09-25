@@ -344,13 +344,13 @@ TABLAS ESTILIZADAS (.bordes)
 
 .bordes th {
     padding: 10px 10px;
-    border: 1px solid #1a5276;
+    border: 1px solid hsl(203, 94%, 12%);
     text-align: center;
 }
 
 .bordes td {
     padding: 10px 10px;
-    border: 1px solid #1a5276 ;
+    border: 1px solid hsl(203, 94%, 12%);
     text-align: left;
 }
 
@@ -610,6 +610,39 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
     margin-top: -50px;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: auto; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+  transition: all 0.3s ease-in-out; /* crea transiciones suaves */
+}
+
+/* agrega un poco de margen superior y de abajo al carrusel para separarlo de otros elementos */
+.carousel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* agregaseparación */
+.contenedor-tarjetas {
+  margin-top: 30px;
+}
+
+/* Imágenes más pequeñas en pantallas pequeñas */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 250px; /* Ajustar la altura en pantallas pequeñas */
+  }
+}
+
+/* Imágenes más grandes en pantallas medianas y grandes */
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 400px; /* Ajustar la altura en pantallas medianas y grandes */
+  }
+}
+
+
 
 
 /* --------------------
@@ -617,24 +650,21 @@ BOTONES PRINCIPALES (.boton)
 -------------------- */
 
 .boton {
-      background-color: #3498db;   
-      align-items: center;
+      background-color: hsl(203, 94%, 12%);   
       color: white;               
       padding: 12px 24px;        
       border: none;                
       border-radius: 8px;          
       font-size: 16px;             
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;             
-      width: 350px;
-      height: 100px;
-      display: flex;
-      background-color:  #007bff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 5.1);
+      cursor: pointer;
+    
 }
 
 .boton:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    
 }
 
 
@@ -787,35 +817,37 @@ TARJETAS DEL INDEX
 TARJETAS DE EQUIPO (.team-card)
 -------------------- */
 
-.team-card {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0;
+.team-card {    /*Contenedor principal que rodea la tarjeta/*/
+    background-color: #aeafaf;
+    border: 1px solid #CECECE;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 25px;
     text-align: center;
     max-width: 280px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content:end;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     min-height: 320px;
     flex-shrink: 0;
     width: 220px;
+    perspective: 1000px;
+    cursor: pointer;
 }
 
 .team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-30px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .team-card img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #eee;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #007bff;
+    border: 3px solid #CECECE;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -830,6 +862,40 @@ TARJETAS DE EQUIPO (.team-card)
     font-size: 1.1em;
     color: #f4f7fa;
     font-weight: 500;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.team-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
