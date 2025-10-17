@@ -480,15 +480,17 @@ CONTENEDORES / FORMULARIO-TARJETA (.contenedor, .form-1, .form-3)
    justify-content: center;
    margin-top: 150px;
    flex-wrap: nowrap;
+   
 }
 
 .form-1 {
     width: 100;
     max-width: 450px;
-    background-color:#1a5276;
+    background-color:#C4C2C2;
     padding: 50px 60px 70px;
     text-align: center;
     border-radius: 30px;
+    margin-top: -100px;
 }
 
 .form-1 h1 {
@@ -497,16 +499,13 @@ CONTENEDORES / FORMULARIO-TARJETA (.contenedor, .form-1, .form-3)
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
+
 }
 
 .form-3 {
-    background-color:#1a5276;
     margin: 15px 0;
-    border-radius: 2px;
-    align-items: center;
-    display:inline-block;
-    transition: max-height 05s;
-    overflow: hidden;
+    
+    
 }
 
 .form-1 h1::after {
@@ -666,6 +665,9 @@ BOTONES PRINCIPALES (.boton)
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     
 }
+
+
+
 
 
 /* --------------------
