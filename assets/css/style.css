@@ -11,6 +11,8 @@ VARIABLES GLOBALES (colores, fuentes)
   --color-background: #FDF5E6;
   --color-text-dark: #1A1A1A;
   --color-text-light: #EEEEEE;
+  --color-button: #0056b3; 
+  
 
   --font-body: 'Roboto Slab', serif;
   --font-heading: 'Archivo Black', cursive;
@@ -116,24 +118,44 @@ NAVEGACIÓN (nav ul y links)
 -------------------- */
 
 nav ul {
-    justify-content: center;
-    font-size: 25px;
-    font-family: var(--font-heading);
-    display: flex;  
-    list-style: none;  
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
-    align-content: center;
-    background-color: var(--color-background);
+    text-align: center;
+    
+    /* Enable Flexbox for the list items */
+    display: flex;
+    justify-content: center; /* Center the entire set of links horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto a new line if the screen is too narrow (desktop fallback) */
+    
+    /* Add a small vertical margin to separate the nav from other header elements */
+    margin-top: 1rem; 
+}
+
+nav ul li {
+    margin: 0 10px; /* Horizontal spacing between links */
 }
 
 nav ul li a {
-    display: flex;
-    text-decoration: none;
-    color: var(--color-text-dark);
-    padding: 10px 15px;
-    display: block;  
+    display: block; /* Make the link fill the LI space for a better click target */
+    padding: 8px 12px; /* Touch target padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-light); /* Use the light text variable */
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
 }
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--color-primary); /* Swap text color */
+    background-color: var(--color-text-light); /* Light background for hover */
+}
+
+  nav ul li:first-child {
+        border-top: none;
+    }
 
 
 /* --------------------
@@ -244,10 +266,10 @@ HEADER y estilo de página (header, .page-header)
 -------------------- */
 
 header {
-    background-color: var(--color-primary);
-    color: var(--color-text-light);
+    /* Assuming var(--color-primary) is a dark color */
+    background-color: var(--color-primary); 
+    color: var(--color-text-light); /* Assuming var(--color-text-light) is a light color */
     padding: 1.5rem;
-
     text-align: center;
 }
 header h2 { color: var(--color-text-light); }
@@ -290,7 +312,7 @@ PASOS / STEP (lista de pasos estilizados)
 
 .step i {
     font-size: 2rem;
-    color: #004080;
+    color: var(--color-primary);
     margin-right: 1rem;
     min-width: 2rem;
 }
@@ -584,28 +606,9 @@ input[type="submit"] {
 BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 -------------------- */
 
-.barra-superior {
-    background-color: var(--color-primary);
-    padding: 10px 20px;
-    text-align: right;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: end;
-    height: 100%;
-}
-
-.barra-superior a {
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-weight: bold;
-    display:flex;
-    height: 30px;
-    width: 150px;
-}
-
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     float:left;
     margin-top: -50px;
 }
@@ -619,7 +622,7 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 
 /* agrega un poco de margen superior y de abajo al carrusel para separarlo de otros elementos */
 .carousel {
-  margin-top: 20px;
+
   margin-bottom: 20px;
 }
 
@@ -650,7 +653,7 @@ BOTONES PRINCIPALES (.boton)
 -------------------- */
 
 .boton {
-      background-color: hsl(203, 94%, 12%);   
+      background-color: hsl(203, 33%, 52%);   
       color: white;               
       padding: 12px 24px;        
       border: none;                
@@ -667,7 +670,10 @@ BOTONES PRINCIPALES (.boton)
     
 }
 
-
+/* --------------------
+NAV-BUTTON (clase .nav-button)
+-------------------- */
+/* Las reglas para .nav-button, .register-button y sus estados fueron eliminadas por petición. */
 /* --------------------
 REPETICIONES Y COMPONENTES (varias clases reutilizadas)
 -------------------- */
@@ -927,4 +933,58 @@ WELCOME / CONTAINER SENTENCIAS FINALES
     font-size: large;
     position: relative; 
     z-index: 90;
+}
+
+/* --------------------
+BOTONES NAV-BUTTON (clase .nav-button)
+-------------------- */
+/* Styling for the container holding "Iniciar Sesión" and "Register" */
+.barra-superior {
+    display: flex; /* Enable Flexbox */
+    justify-content: flex-end; /* Push items to the far right of the container */
+    align-items: center; /* Vertically center items if they have different heights */
+    padding: 10px 20px; /* Add some padding to the bar itself, adjust as needed */
+    background-color: var(--color-primary); /* Or whatever dark blue color you are using for the header */
+    gap: 15px; /* Add space between the "Iniciar Sesión" link and the "Register" button */
+}
+
+/* Style for the "Iniciar sesión" link if it's not a button */
+.login-link {
+    color: #ffffff; /* White text for better visibility on dark background */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it bold like the button text */
+    /* Add any other styling you want for this link */
+}
+
+.login-link:hover {
+    text-decoration: underline; /* Add underline on hover for interaction feedback */
+}
+
+/* Original .nav-button and .register-button styles remain mostly the same */
+.nav-button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+    display: inline-block;
+    text-align: center; /* Ensures text is centered within the button */
+}
+
+.register-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 1px solid #007bff;
+    /* margin-left: 15px; <--- REMOVE THIS, as `gap` on .barra-superior will handle spacing */
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    opacity: 0.9;
+}
+
+.register-button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
 }
