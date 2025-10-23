@@ -660,7 +660,7 @@ BOTONES PRINCIPALES (.boton)
       font-size: 16px;             
       box-shadow: 0 5px 15px rgba(0, 0, 0, 5.1);
       cursor: pointer;
-    
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .boton:hover {
