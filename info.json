@@ -1,6 +1,9 @@
-{
-    "identificacion": "1035972398",
-    "nombres": "Victor Alejandro",
-    "apellidos": "Berrío Rivera",
-    "grupo": "web1-jueves"
-}
+
+  [
+  {
+    "cedula": "123456789",
+    "contrasena": "abc123",
+    "nombre": "María López",
+    "email": "maria@example.com"
+  }
+]
