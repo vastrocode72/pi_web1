@@ -5,21 +5,17 @@
 VARIABLES GLOBALES (colores, fuentes)
 -------------------- */
 
-.carousel-container {
-    width: 50%; /* Reduce el ancho al 50% */
-    margin: 0 auto; /* Centra el carrusel horizontalmente */
-}
-
 :root {
-  --color-primary: #005F73;
-  --color-secondary: #030027;
-  --color-accent: #CAA8F5;
-  --color-background: #ffffff;
+  --color-primary: #172A3A;
+  --color-secondary: #84C6F4;
+  --color-background: #FDF5E6;
   --color-text-dark: #1A1A1A;
   --color-text-light: #EEEEEE;
+  --color-button: #0056b3; 
+  
 
   --font-body: 'Roboto Slab', serif;
-  --font-heading: 'story script', cursive;
+  --font-heading: 'Archivo Black', cursive;
   --font-footer: 'lobster', cursive;
 }
 
@@ -30,10 +26,11 @@ ESTILOS BASE (body, tipografías generales)
 
 body {
     font-family: var(--font-body);
-    background-color: #F8F8F8;
+    background-color: var(--color-background);
+    color: var(--color-text-dark);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
 
@@ -41,30 +38,10 @@ body {
 ENCABEZADOS (h1, h2 selector especial #h2)
 -------------------- */
 
-h1, h2, h3{
+h1, h2, h3, h4, h5, h6{
     font-size: 50px;
     font-family: var(--font-heading)
     
-}
-
-
-
-
-/* --------------------
-BANNER (caja principal en la parte superior con imagen de fondo)
--------------------- */
-
-.banner {
-      width: 100%;
-      height: 300px; 
-      background-image: url(IMAGENES/banner-background-without-image-min.jpg);
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      font-size: 100px;
 }
 
 
@@ -80,7 +57,7 @@ TARJETAS (clase .card)
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color:#1a5276;
+    background-color:var(--color-secondary);
     text-align: center;
 }
 
@@ -94,17 +71,6 @@ TARJETAS (clase .card)
   height: 150px;
   border-radius: 100%;
 }
-
-
-/* --------------------
-IMÁGENES REUTILIZABLES (clase .imagenes)
--------------------- */
-
-.imagenes img {
-    width: 100%;
-    border-radius: 10px;
-}
-
 
 /* --------------------
 CONTENIDOS DE TARJETA (clase .contenido)
@@ -124,50 +90,72 @@ CONTENIDOS DE TARJETA (clase .contenido)
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* --------------------
+IMÁGENES REUTILIZABLES (clase .imagenes)
+-------------------- */
+
+.imagenes img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
 
 /* --------------------
 LISTAS (ul)
 -------------------- */
 
 ul {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
+    color: var(--color-text-light);
     font-size: 10px;
 }
-
-
-/* --------------------
-TITULOS GRANDES (clase .titulo1)
--------------------- */
-
-.titulo1 {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 50px;
-    text-shadow: 2px 2px 5px hsl(0, 8%, 91%);
-}
-
 
 /* --------------------
 NAVEGACIÓN (nav ul y links)
 -------------------- */
 
 nav ul {
-    justify-content: center;
-    font-size: 25px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: flex;  
-    list-style: none;  
+    list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0;
-    align-content: center;
-    background-color: white;
+    text-align: center;
+    
+    /* Enable Flexbox for the list items */
+    display: flex;
+    justify-content: center; /* Center the entire set of links horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto a new line if the screen is too narrow (desktop fallback) */
+    
+    /* Add a small vertical margin to separate the nav from other header elements */
+    margin-top: 1rem; 
+}
+
+nav ul li {
+    margin: 0 10px; /* Horizontal spacing between links */
 }
 
 nav ul li a {
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;  
+    display: block; /* Make the link fill the LI space for a better click target */
+    padding: 8px 12px; /* Touch target padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-light); /* Use the light text variable */
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
 }
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: var(--color-primary); /* Swap text color */
+    background-color: var(--color-text-light); /* Light background for hover */
+}
+
+  nav ul li:first-child {
+        border-top: none;
+    }
 
 
 /* --------------------
@@ -190,67 +178,71 @@ SECCIONES (section1, section2)
 
 /* --------------------
 FOOTER (contenedor y sus subpartes)
+/* --------------------
+FOOTER (elemento footer general)
 -------------------- */
 
-.footer__container {
-    font-size: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    gap: var(--spacing-xl);
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+/*
+  Estilos para el footer en general.
+  NO USES flexbox en el footer directamente.
+*/
+.footer {
+  background-color: var(--color-primary);
+  font-family: var(--font-footer);
+  color: var(--color-text-light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-.footer__info { flex: 1; min-width: 250px; }
-.footer__logo { color: var(--text-white); margin-bottom: var(--spacing-sm); }
-.footer__text { color: var(--text-light); }
-.footer__links, .footer__contact { flex: 1; min-width: 200px; color: white; }
-
-.footer__heading {
-    color: var(--text-white);
-    margin-bottom: var(--spacing-md);
-    color: white;  
+/*
+  Este es el contenedor que hace que las columnas se alineen en fila.
+  Es el único lugar donde necesitas las propiedades de flexbox.
+*/
+.footer-columns {
+  display: flex;
+  justify-content: space-between; /* Distribuye el espacio entre las columnas */
+  align-items: flex-start; /* Alinea los ítems en la parte superior */
+  flex-wrap: wrap; /* Permite que las columnas se muevan a una nueva fila en pantallas pequeñas */
+  padding: 20px;
 }
 
-.footer__nav {
-    color: white;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
+footer p {
+  color: #FFFFFF;
 }
 
-.footer__nav img {
-    height: 30px;
-    right: 30px;
-    align-items: center;
-    padding-right: 5px;
-    margin-top: 5px;
+/* Estilos para cada una de las columnas */
+.column {
+  width: 30%;
+  color: var(--color-text-light);
+  text-align: center;
 }
 
-.footer__nav a { color: var(--text-light); }
-.footer__contact p { color: var(--text-light); margin-bottom: var(--spacing-sm); }
-
-.footer__contact {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white ;
-    font-size: 15px;
+/* Estilos para el texto de copyright */
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.footer__bottom {
-    text-align: center;
-    padding: 10px;
-    margin-top: var(--spacing-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: #1a5276;
+/* Estilo para los enlaces de las listas */
+.column ul {
+  list-style: none;
+  padding: 0;
+
 }
 
-.pie_pagina { color: white; }
+.column a {
+  color: var(--color-text-light); /* Asumiendo que esta es tu variable de color */
+  text-decoration: none;
+}
 
+/* Estilos para las imágenes de redes sociales */
+.social-links img {
+  height: 30px;
+  padding: 0 5px; /* Espacio entre las imágenes */
+  margin-top: 5px;
+}
 
 /* --------------------
 ABOUT / SOBRE NOSOTROS (estructuras con imagen y texto)
@@ -274,19 +266,19 @@ HEADER y estilo de página (header, .page-header)
 -------------------- */
 
 header {
-    background-color: #1a5276;
-    color: white;
+    /* Assuming var(--color-primary) is a dark color */
+    background-color: var(--color-primary); 
+    color: var(--color-text-light); /* Assuming var(--color-text-light) is a light color */
     padding: 1.5rem;
-    margin-top: 50px;
     text-align: center;
 }
-header h2 { color: #ffffff; }
+header h2 { color: var(--color-text-light); }
 
 .page-header {
-    background-color: #f8f8f8;
+    background-color:var(--color-text-light);
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-text-light);
     margin-bottom: 40px;
 }
 
@@ -309,7 +301,7 @@ PASOS / STEP (lista de pasos estilizados)
 
 .step {
     background-color: white;
-    border-left: 5px solid #004080;
+    border-left: 5px solid var(--color-primary);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
@@ -320,7 +312,7 @@ PASOS / STEP (lista de pasos estilizados)
 
 .step i {
     font-size: 2rem;
-    color: #004080;
+    color: var(--color-primary);
     margin-right: 1rem;
     min-width: 2rem;
 }
@@ -334,28 +326,6 @@ PASOS / STEP (lista de pasos estilizados)
 
 .step p {
     margin: 0;
-}
-
-
-/* --------------------
-FOOTER (elemento footer general)
--------------------- */
-
-footer {
-    background-color: #1a5276;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
-
-
-/* --------------------
-ENLACES (a)
--------------------- */
-
-a {
-    color: #004080;
-    text-decoration: none;
 }
 
 a:hover {
@@ -396,13 +366,13 @@ TABLAS ESTILIZADAS (.bordes)
 
 .bordes th {
     padding: 10px 10px;
-    border: 1px solid #1a5276;
+    border: 1px solid hsl(203, 94%, 12%);
     text-align: center;
 }
 
 .bordes td {
     padding: 10px 10px;
-    border: 1px solid #1a5276 ;
+    border: 1px solid hsl(203, 94%, 12%);
     text-align: left;
 }
 
@@ -419,31 +389,7 @@ TABLAS ESTILIZADAS (.bordes)
 TEXTOS REUTILIZABLES (.texto)
 -------------------- */
 
-.texto {
-    font-family:Arial, Helvetica, sans-serif;
-}
 
-.texto {
-    display: flex;
-    align-items: center;
-    width: 90%px;
-    margin: 20px auto;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-}
-
-.texto img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-}
-
-.texto p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: justify;
-}
 /* --------------------
 BOTÓN FLOTANTE WHATSAPP (.whatsapp-btn)
 -------------------- */
@@ -556,15 +502,17 @@ CONTENEDORES / FORMULARIO-TARJETA (.contenedor, .form-1, .form-3)
    justify-content: center;
    margin-top: 150px;
    flex-wrap: nowrap;
+   
 }
 
 .form-1 {
     width: 100;
     max-width: 450px;
-    background-color:#1a5276;
+    background-color:#C4C2C2;
     padding: 50px 60px 70px;
     text-align: center;
     border-radius: 30px;
+    margin-top: -100px;
 }
 
 .form-1 h1 {
@@ -573,16 +521,13 @@ CONTENEDORES / FORMULARIO-TARJETA (.contenedor, .form-1, .form-3)
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
+
 }
 
 .form-3 {
-    background-color:#1a5276;
     margin: 15px 0;
-    border-radius: 2px;
-    align-items: center;
-    display:inline-block;
-    transition: max-height 05s;
-    overflow: hidden;
+    
+    
 }
 
 .form-1 h1::after {
@@ -647,7 +592,7 @@ input[type="submit"]:hover {
 
 input[type="submit"] {
     background-color: hsl(203, 94%, 12%);
-    color: white;
+    color: var(--color-text-light);
     padding: 10px 15px;
     margin-top: 20px;
     border: none;
@@ -656,117 +601,76 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-h2 {
-    text-align: center;
-    color: black;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-
-p {
-    text-align: center;
-    color: black;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
 /* --------------------
 BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 -------------------- */
 
-.barra-superior {
-    padding: 10px 20px;
-    margin-left:10px;
-    text-align: right;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: end;
-}
-
-.barra-superior a {
-    color: #005F73;
-    text-decoration: none;
-    font-weight: bold;
-    display:flex;
-    height: 30px;
-    width: 150px;
-}
-
 .logo img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     float:left;
     margin-top: -50px;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: auto; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+  transition: all 0.3s ease-in-out; /* crea transiciones suaves */
+}
 
-/* --------------------
-CAROUSEL (imágenes dentro de carrusel)
--------------------- */
+/* agrega un poco de margen superior y de abajo al carrusel para separarlo de otros elementos */
+.carousel {
 
-.carousel-inner img {
-   margin-top:30px;
-   height: 500px;
-   width: 250px;
+  margin-bottom: 20px;
+}
+
+/* agregaseparación */
+.contenedor-tarjetas {
+  margin-top: 30px;
+}
+
+/* Imágenes más pequeñas en pantallas pequeñas */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 250px; /* Ajustar la altura en pantallas pequeñas */
+  }
+}
+
+/* Imágenes más grandes en pantallas medianas y grandes */
+@media (min-width: 768px) {
+  .carousel-item img {
+    height: 400px; /* Ajustar la altura en pantallas medianas y grandes */
+  }
 }
 
 
-/* --------------------
-PQR (clase simple para texto de atención o botones)
--------------------- */
-
-.PQR {
-    color: white;
-}
 
 
-/* --------------------
-SECCIÓN TEXTO 
--------------------- */
-
-.texto {
-    display: flex;
-    align-items: center;
-    width: 90%px;
-    margin: 20px auto;
-    padding: 20px;
-    gap: 20px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-}
-
-.texto img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-}
-
-.texto p {
-      font-size: 16px;
-      line-height: 1.5;
-      text-align: justify;
-}
 /* --------------------
 BOTONES PRINCIPALES (.boton)
 -------------------- */
 
 .boton {
-      background-color: #3498db;   
-      align-items: center;
+      background-color: hsl(203, 33%, 52%);   
       color: white;               
       padding: 12px 24px;        
       border: none;                
       border-radius: 8px;          
       font-size: 16px;             
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;             
-      width: 350px;
-      height: 100px;
-      display: flex;
-      background-color:  #007bff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 5.1);
+      cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .boton:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    
 }
+
+
+
 
 
 /* --------------------
@@ -801,45 +705,7 @@ REPETICIONES Y COMPONENTES (varias clases reutilizadas)
 TARJETAS DE INICIO (.cardinicio)
 -------------------- */
 
-.cardinicio {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0; 
-    border-radius: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   
-    margin: 20px; 
-    padding: 20px; 
-    width: 300px; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.cardinicio .imagenes img {
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 10px; 
-    margin-bottom: 15px; 
-}
-
-.cardinicio .contenido h1 {
-    font-size: 1.8em; 
-    color: #0a0a0a; 
-    margin-bottom: 10px; 
-}
-
-.cardinicio .contenido p {
-    font-size: 1em; 
-    color:#0a0a0a; 
-    line-height: 1.5; 
-    margin-bottom: 5px; 
-}
-
-.cardinicio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
 /* --------------------
 BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 -------------------- */
@@ -881,50 +747,49 @@ BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 
 .comoaplicartarjetas .step h2 {
     font-size: 1.5em; 
-    color: #333333; 
+    color: var(--color-text-light); 
     margin-bottom: 10px; 
 }
 
 .comoaplicartarjetas .step p {
     font-size: 1em; 
-    color: #666666; 
+    color: var(--color-text-light); 
     line-height: 1.6;
 }
 
 
 /* --------------------
-CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
+TARJETAS DEL INDEX
 -------------------- */
 
 .contenedor-tarjetas {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 0 20px;
-    gap: 0px auto;
-    padding: 20px;
-    flex-direction: row;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  max-width: 960px;
+  margin: 50px auto;
+  padding: 20px;
+  flex-direction: row;
+  gap: 25px;
 }
 
+/* El resto de tu código para .cardinicio permanece igual, pero ya no necesitas margin */
 .cardinicio {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    text-align: center;
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    min-height: 380px;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-background);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  flex: 1 1 calc(50% - 40px);
+  max-width: calc(50% - 40px);
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .cardinicio:hover {
@@ -940,72 +805,54 @@ CONTENEDOR PRINCIPAL DE TARJETAS (.contenedor-tarjetas, .team-card)
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.cardinicio .contenido {
-    width: 100%;
-}
-
 .cardinicio .contenido h1 {
     font-size: 2em;
-    color: #f7f5f5;
+    color: var(--color-text-light);
     margin-bottom: 10px;
 }
 
 .cardinicio .contenido p {
     font-size: 1.1em;
-    color: #eee7e7;
+    color: var(--color-text-light);
     line-height: 1.5;
     margin-bottom: 5px;
 }
 
-.container {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: nowrap;
-    margin-bottom: 20px;
-    gap: 15px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px;
-    overflow-x: auto;
-    flex-direction: row;
-}
 /* --------------------
 TARJETAS DE EQUIPO (.team-card)
 -------------------- */
 
-.team-card {
-    background-color: #5b97bd;
-    border: 1px solid #e0e0e0;
+.team-card {    /*Contenedor principal que rodea la tarjeta/*/
+    background-color: #aeafaf;
+    border: 1px solid #CECECE;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     padding: 25px;
     text-align: center;
     max-width: 280px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content:end;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     min-height: 320px;
     flex-shrink: 0;
     width: 220px;
+    perspective: 1000px;
+    cursor: pointer;
 }
 
 .team-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-30px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .team-card img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #eee;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #007bff;
+    border: 3px solid #CECECE;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -1022,6 +869,40 @@ TARJETAS DE EQUIPO (.team-card)
     font-weight: 500;
 }
 
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+}
+
+.team-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 
 /* --------------------
 WELCOME / CONTAINER SENTENCIAS FINALES 
@@ -1036,9 +917,9 @@ WELCOME / CONTAINER SENTENCIAS FINALES
 }
 
 .welcome-container {
-    background-color: #bad6ee; 
-    color: #0c0c0c; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: var(--color-primary); 
+    color: var(--color-text-light); 
+    font-family: var(--font-footer); 
     padding: 20px;     
     margin: 20px auto; 
     border-radius: 8px; 
@@ -1393,4 +1274,58 @@ SECCIÓN PRINCIPAL
   padding: 15px;
   font-size: 0.9rem;
   font-family: var(--font-footer);
+}
+
+/* --------------------
+BOTONES NAV-BUTTON (clase .nav-button)
+-------------------- */
+/* Styling for the container holding "Iniciar Sesión" and "Register" */
+.barra-superior {
+    display: flex; /* Enable Flexbox */
+    justify-content: flex-end; /* Push items to the far right of the container */
+    align-items: center; /* Vertically center items if they have different heights */
+    padding: 10px 20px; /* Add some padding to the bar itself, adjust as needed */
+    background-color: var(--color-primary); /* Or whatever dark blue color you are using for the header */
+    gap: 15px; /* Add space between the "Iniciar Sesión" link and the "Register" button */
+}
+
+/* Style for the "Iniciar sesión" link if it's not a button */
+.login-link {
+    color: #ffffff; /* White text for better visibility on dark background */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make it bold like the button text */
+    /* Add any other styling you want for this link */
+}
+
+.login-link:hover {
+    text-decoration: underline; /* Add underline on hover for interaction feedback */
+}
+
+/* Original .nav-button and .register-button styles remain mostly the same */
+.nav-button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+    display: inline-block;
+    text-align: center; /* Ensures text is centered within the button */
+}
+
+.register-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 1px solid #007bff;
+    /* margin-left: 15px; <--- REMOVE THIS, as `gap` on .barra-superior will handle spacing */
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    opacity: 0.9;
+}
+
+.register-button:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
 }
