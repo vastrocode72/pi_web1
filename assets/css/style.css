@@ -26,11 +26,36 @@ ESTILOS BASE (body, tipografías generales)
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-background);
     color: var(--color-text-dark);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url(../imagenes/fondo_body.jpeg);
+}
+
+
+
+.nube{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../imagenes/2.jpeg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: moverNubes 60s linear infinite;
+  z-index: -10; /* Asegúrate de que esté al fondo */
+
+}
+
+@keyframes moverNubes {
+   from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
 }
 
 
@@ -41,9 +66,7 @@ ENCABEZADOS (h1, h2 selector especial #h2)
 h1, h2, h3, h4, h5, h6{
     font-size: 50px;
     font-family: var(--font-heading)
-    
 }
-
 
 /* --------------------
 TARJETAS (clase .card)
@@ -205,6 +228,7 @@ FOOTER (elemento footer general)
   align-items: flex-start; /* Alinea los ítems en la parte superior */
   flex-wrap: wrap; /* Permite que las columnas se muevan a una nueva fila en pantallas pequeñas */
   padding: 20px;
+
 }
 
 footer p {
@@ -216,7 +240,9 @@ footer p {
   width: 30%;
   color: var(--color-text-light);
   text-align: center;
+  
 }
+
 
 /* Estilos para el texto de copyright */
 .copyright {
@@ -229,6 +255,7 @@ footer p {
 .column ul {
   list-style: none;
   padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 
 }
 
@@ -243,6 +270,11 @@ footer p {
   padding: 0 5px; /* Espacio entre las imágenes */
   margin-top: 5px;
 }
+
+.social-links{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
 /* --------------------
 ABOUT / SOBRE NOSOTROS (estructuras con imagen y texto)
@@ -267,7 +299,7 @@ HEADER y estilo de página (header, .page-header)
 
 header {
     /* Assuming var(--color-primary) is a dark color */
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary);
     color: var(--color-text-light); /* Assuming var(--color-text-light) is a light color */
     padding: 1.5rem;
     text-align: center;
@@ -423,6 +455,32 @@ BOTÓN FLOTANTE WHATSAPP (.whatsapp-btn)
 FORMULARIO (títulos, inputs, labels)
 -------------------- */
 
+
+.fondo {
+  background-image: url('../imagenes/logo_fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  
+} 
+
+.fondo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* blanco con opacidad */
+    z-index: 0;
+}
+
+.fondo > * {
+    position: relative;
+    z-index: 1;
+}
+
 .titulo_form {
         text-align: center;
         color: #2c3e50;
@@ -430,12 +488,12 @@ FORMULARIO (títulos, inputs, labels)
 }
 
 form {
-    background-color: #ffffff;
+    background-color: #ffffffd0;
     padding: 20px 30px;
     border-radius: 10px;
     max-width: 500px;
     margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 label {
@@ -445,12 +503,14 @@ label {
     color: #34495e;
     font-weight: bold;
 }
-
+input[type="password"],
+input[type="number"],
 input[type="text"],
 input[type="date"],
 input[type="tel"],
 input[type="email"],
-input[type="file"],
+input[type="file"]
+input[type="password"],
 select {
     width: 100%;
     padding: 10px;
@@ -488,6 +548,55 @@ p {
     text-align: center;
     color: #555;
 }
+
+.button2[type="button"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button2[type="button"] {
+    background-color: #172A3A;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* formulario de registro de usuario */
+/* Da estilo a los inputs*/
+form#registroForm input,
+form#registroForm button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* para que el padding no aumente el ancho */
+}
+
+/* Botón más llamativo */
+form#registroForm button {
+  background-color: #007bff; /* azul bootstrap */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form#registroForm button:hover { /*cuando pasa el mouse por encima de la interactvidad*/
+  background-color: #0056b3;
+}
+
 
 
 /* --------------------
@@ -621,14 +730,11 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
 
 /* agrega un poco de margen superior y de abajo al carrusel para separarlo de otros elementos */
 .carousel {
-
   margin-bottom: 20px;
 }
 
 /* agregaseparación */
-.contenedor-tarjetas {
-  margin-top: 30px;
-}
+
 
 /* Imágenes más pequeñas en pantallas pequeñas */
 @media (max-width: 767px) {
@@ -652,7 +758,7 @@ BOTONES PRINCIPALES (.boton)
 -------------------- */
 
 .boton {
-      background-color: hsl(203, 33%, 52%);   
+      background-color: hsl(203, 34%, 67%);   
       color: white;               
       padding: 12px 24px;        
       border: none;                
@@ -663,16 +769,15 @@ BOTONES PRINCIPALES (.boton)
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.boton-3{
+    text-align: center;
+}
+
 .boton:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
     
 }
-
-
-
-
-
 /* --------------------
 REPETICIONES Y COMPONENTES (varias clases reutilizadas)
 -------------------- */
@@ -772,14 +877,15 @@ TARJETAS DEL INDEX
   padding: 20px;
   flex-direction: row;
   gap: 25px;
+  margin-top: 30px;
 }
 
 /* El resto de tu código para .cardinicio permanece igual, pero ya no necesitas margin */
 .cardinicio {
-  background-color: var(--color-primary);
+  background-color: rgb(197, 195, 195);
   border: 1px solid var(--color-background);
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.10);
   padding: 25px;
   text-align: center;
   flex: 1 1 calc(50% - 40px);
@@ -789,12 +895,14 @@ TARJETAS DEL INDEX
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .cardinicio:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-primary);
 }
 
 .cardinicio .imagenes img {
@@ -804,6 +912,10 @@ TARJETAS DEL INDEX
     object-fit: cover;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardinicio .imagenes:hover {
+  transform: translateY(-10px) scale(1.05);
 }
 .cardinicio .contenido h1 {
     font-size: 2em;
@@ -818,6 +930,13 @@ TARJETAS DEL INDEX
     margin-bottom: 5px;
 }
 
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .contenedor-tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* --------------------
 TARJETAS DE EQUIPO (.team-card)
 -------------------- */
@@ -1285,7 +1404,8 @@ BOTONES NAV-BUTTON (clase .nav-button)
     justify-content: flex-end; /* Push items to the far right of the container */
     align-items: center; /* Vertically center items if they have different heights */
     padding: 10px 20px; /* Add some padding to the bar itself, adjust as needed */
-    background-color: var(--color-primary); /* Or whatever dark blue color you are using for the header */
+    background-color: var(--color-primary);
+     /* Or whatever dark blue color you are using for the header */
     gap: 15px; /* Add space between the "Iniciar Sesión" link and the "Register" button */
 }
 
