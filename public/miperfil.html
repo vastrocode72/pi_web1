@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Sistema de Gestión de Becas</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Archivo+Black&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <nav class="barra">
+      <h1 class="titulo">Sistema de Gestión de Becas</h1>
+      <ul class="menu">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="../pages/miperfil.html" class="activo">Mi Perfil</a></li>
+        <li><a href="../pages/estadode.html">Estado de Beca</a></li>
+        <li><a href="../pages/cronograma.html">Cronograma</a></li>
+        <li><a href="../pages/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+    <section class="tarjeta-perfil">
+      
+      <!-- FOTO DE PERFIL -->
+      <div class="foto-perfil">
+        <img id="imagenPerfil" src="imagenes/avatar.png" alt="Foto de perfil del usuario">
+        <input type="file" id="cambiarFoto" accept="image/*" hidden>
+        <button class="btn-cambiar" id="botonCambiar">Cambiar foto</button>
+      </div>
+
+      <!-- INFORMACIÓN DEL PERFIL -->
+      <div class="info-perfil">
+        <h2>Información del Usuario</h2>
+        <form class="formulario-perfil">
+          <div class="campo">
+            <label>Nombre completo:</label>
+            <input type="text" value="Sandra González" readonly>
+          </div>
+
+          <div class="campo">
+            <label>Documento:</label>
+            <input type="text" value="1098765432" readonly>
+          </div>
+
+          <div class="campo">
+            <label>Correo electrónico:</label>
+            <input type="email" value="sandra@example.com" readonly>
+          </div>
+
+          <div class="campo">
+            <label>Programa académico:</label>
+            <input type="text" value="Ingeniería de Sistemas" readonly>
+          </div>
+
+          <div class="campo">
+            <label>Tipo de beca:</label>
+            <input type="text" value="Beca de Excelencia Académica" readonly>
+          </div>
+
+          <div class="campo">
+            <label>Estado actual:</label>
+            <input type="text" value="Activa" readonly>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <p>&copy; 2025 Sistema de Gestión de Becas - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT PARA CAMBIAR FOTO -->
+  <script>
+    const botonCambiar = document.getElementById('botonCambiar');
+    const inputFoto = document.getElementById('cambiarFoto');
+    const imagenPerfil = document.getElementById('imagenPerfil');
+
+    botonCambiar.addEventListener('click', () => {
+      inputFoto.click();
+    });
+
+    inputFoto.addEventListener('change', (evento) => {
+      const archivo = evento.target.files[0];
+      if (archivo) {
+        const lector = new FileReader();
+        lector.onload = (e) => {
+          imagenPerfil.src = e.target.result;
+        };
+        lector.readAsDataURL(archivo);
+      }
+    });
+  </script>
+
+</body>
+</html>

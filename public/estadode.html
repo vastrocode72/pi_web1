@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado de tu Gestión - Sistema de Becas</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;500;700&family=Archivo+Black&family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <nav class="barra">
+      <h1 class="titulo">Sistema de Gestión de Becas</h1>
+      <ul class="menu">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="perfil.html">Mi Perfil</a></li>
+        <li><a href="estado.html" class="activo">Estado de tu Gestión</a></li>
+        <li><a href="cronograma.html">Cronograma</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenedor">
+    <section class="consulta-estado">
+      <h2>Consulta el Estado de tu Solicitud</h2>
+      <p>Ingresa el correo electrónico con el que realizaste la solicitud para ver el estado actual de tu proceso de beca.</p>
+
+      <form id="formConsulta" class="formulario-estado">
+        <input type="email" id="correo" placeholder="Correo electrónico del solicitante" required>
+        <button type="submit" class="btn-consultar">Consultar Estado</button>
+      </form>
+
+      <div id="resultado" class="resultado oculto">
+        <h3>Progreso de tu solicitud</h3>
+        <div class="linea-tiempo">
+          <div class="etapa completado">Enviada</div>
+          <div class="etapa completado">Revisada</div>
+          <div class="etapa actual">Aprobada</div>
+          <div class="etapa pendiente">Asignada</div>
+          <div class="etapa pendiente">Finalizada</div>
+        </div>
+        <p class="estado-texto">Tu solicitud ha sido <strong>aprobada</strong> y está en proceso de asignación.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <p>&copy; 2025 Sistema de Gestión de Becas - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- SCRIPT DE SIMULACIÓN -->
+  <script>
+    const form = document.getElementById('formConsulta');
+    const resultado = document.getElementById('resultado');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      resultado.classList.remove('oculto');
+      resultado.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
