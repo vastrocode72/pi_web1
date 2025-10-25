@@ -1434,3 +1434,50 @@ BOTONES NAV-BUTTON (clase .nav-button)
     outline: 2px solid #007bff;
     outline-offset: 2px;
 }
+
+/* Sección de estadísticas */
+.estadisticas {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.numeros-estadisticas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.icono {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.contador {
+  background: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.5s;
+  cursor: pointer;
+}
+
+.contador:hover {
+  transform: scale(1.10);
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
+}
+
+.contador h3 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.contador p {
+  margin: 5px 0 0;
+  font-weight: bold;
+  color: #555;
+}
