@@ -34,7 +34,6 @@ body {
 }
 
 
-
 .nube{
   position: fixed;
   top: 0;
@@ -45,7 +44,7 @@ body {
   background-repeat: repeat-x;
   background-size: auto 100%;
   animation: moverNubes 60s linear infinite;
-  z-index: -10; /* Asegúrate de que esté al fondo */
+  z-index: -10; 
 
 }
 
@@ -218,10 +217,6 @@ FOOTER (elemento footer general)
   margin-top: 2rem;
 }
 
-/*
-  Este es el contenedor que hace que las columnas se alineen en fila.
-  Es el único lugar donde necesitas las propiedades de flexbox.
-*/
 .footer-columns {
   display: flex;
   justify-content: space-between; /* Distribuye el espacio entre las columnas */
@@ -733,9 +728,6 @@ BARRA SUPERIOR y LOGO (.barra-superior, .logo)
   margin-bottom: 20px;
 }
 
-/* agregaseparación */
-
-
 /* Imágenes más pequeñas en pantallas pequeñas */
 @media (max-width: 767px) {
   .carousel-item img {
@@ -804,12 +796,6 @@ REPETICIONES Y COMPONENTES (varias clases reutilizadas)
   justify-content: center;
   align-items: center;
 }
-
-
-/* --------------------
-TARJETAS DE INICIO (.cardinicio)
--------------------- */
-
 
 /* --------------------
 BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
@@ -1052,7 +1038,6 @@ WELCOME / CONTAINER SENTENCIAS FINALES
     position: relative; 
     z-index: 90;
 }
-/*milena*/
 
 body {
   font-family: var(--font-body);
