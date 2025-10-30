@@ -21,7 +21,7 @@
 </head>
 
 <body class="fondo">
-    <!-- Header -->
+  <!-- Header -->
   <header class="header">
     <div>
       <div class="barra-superior">
@@ -42,7 +42,6 @@
       <ul>
         <li><a href="../../index.html">Inicio</a></li>
         <li><a href="../pages/equipo.html">Equipo</a></li>
-        <li><a href="../pages/acercade.html">Acerca de</a></li>
         <li><a href="../pages/comoaplicar.html">Como aplicar</a></li>
         <li><a href="../pages/cronograma.html">Cronograma</a></li>
       </ul>
@@ -65,55 +64,66 @@
           </div><br><br>
           <div class="btn-field">
             <button type="button" class="button2" id="sigIn">Ingresar</button><br><br>
+            <p id="mensaje"></p>
             <div class="registro">
               <nav>
                 <button type="button" class="button2" id="sigUp"><a href="registro.html">Registrarse</a></button>
               </nav>
-    <script>
-      document.getElementById('sigIn').addEventListener('click', function () {
 
-        const cedula = document.getElementById('cedula').value.trim();
-        const contrasena = document.getElementById('contrasena').value.trim();
-        const mensaje = document.getElementById('mensaje');
 
-        if (cedula === "" || contrasena === "") {
-          mensaje.textContent = "Todos los campos son obligatorios.";
-          mensaje.style.color = "black";
-          return;
-        }
+              <script>
+                document.getElementById('sigIn').addEventListener('click', function () {
 
-        // URL con filtro por cédula
-        const url = `https://68f27b1eb36f9750deecc6df.mockapi.io/IniciodeSesion?cedula=${encodeURIComponent(cedula)}`;
 
-        fetch(url)
-          .then(response => {
-            if (!response.ok) throw new Error("No se pudo conectar con el servidor.");
-            return response.json();
-          })
-          .then(data => {
-            if (data.length === 0) {
-              // No se encontró usuario
-              mensaje.textContent = "Usuario no registrado. Debe registrarse primero.";
-              mensaje.style.color = "black";
-            } else {
-              // Usuario encontrado, verificar contraseña
-              const usuario = data[0];
-              if (usuario.contrasena === contrasena) {
-                mensaje.textContent = "Inicio de sesión exitoso.";
-                mensaje.style.color = "green";
-                // Aquí puedes redirigir al usuario o guardar sesión
-              } else {
-                mensaje.textContent = "Contraseña incorrecta.";
-                mensaje.style.color = "red";
-              }
-            }
-          })
-          .catch(error => {
-            console.error("Error:", error);
-            mensaje.textContent = "Error al verificar los datos. Intenta más tarde.";
-            mensaje.style.color = "red";
-          });
-      });
-  </script>
+                  const cedula = document.getElementById('cedula').value.trim();
+                  const contrasena = document.getElementById('contrasena').value.trim();
+                  const mensaje = document.getElementById('mensaje');
+
+                  if (cedula === "" || contrasena === "") {
+                    mensaje.textContent = "Todos los campos son obligatorios.";
+                    mensaje.style.color = "black";
+                    return;
+                  }
+
+                  // URL con filtro por cédula
+                  const url = `https://68f27b1eb36f9750deecc6df.mockapi.io/IniciodeSesion?cedula=${encodeURIComponent(cedula)}`;
+
+                  fetch(url)
+                    .then(response => {
+                      if (!response.ok) throw new Error("No se pudo conectar con el servidor.");
+                      return response.json();
+                    })
+                    .then(data => {
+                      if (data.length === 0) {
+                        // No se encontró usuario
+                        mensaje.textContent = "Usuario no registrado. Debe registrarse primero.";
+                        mensaje.style.color = "black";
+                      } else {
+                        // Usuario encontrado, verificar contraseña
+                        const usuario = data[0];
+                        if (usuario.contrasena === contrasena) {
+                          mensaje.textContent = "Inicio de sesión exitoso.";
+                          mensaje.style.color = "green";
+
+                          localStorage.setItem("usuarioActivo", JSON.stringify(usuario)); //guarda el usuario activo
+
+                          // Redirige al perfil después de 1 segundo
+                          setTimeout(() => {
+                            window.location.href = "miperfil.html"; // ajusta la ruta si está en otra carpeta
+                          }, 1000);
+                          // Aquí puedes redirigir al usuario o guardar sesión
+                        } else {
+                          mensaje.textContent = "Contraseña incorrecta.";
+                          mensaje.style.color = "red";
+                        }
+                      }
+                    })
+                    .catch(error => {
+                      console.error("Error:", error);
+                      mensaje.textContent = "Error al verificar los datos. Intenta más tarde.";
+                      mensaje.style.color = "red";
+                    });
+                });
+              </script>
 </body>
 </html>

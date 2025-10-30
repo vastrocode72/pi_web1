@@ -749,7 +749,7 @@ BOTONES PRINCIPALES (.boton)
 -------------------- */
 
 .boton {
-      background-color: hsl(203, 34%, 67%);   
+      background-color: var(--color-button);   
       color: white;               
       padding: 12px 24px;        
       border: none;                
