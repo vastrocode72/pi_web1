@@ -140,31 +140,29 @@ NAVEGACIÓN (nav ul y links)
 -------------------- */
 
 nav ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none; 
     padding: 0;
     margin: 0;
     text-align: center;
     
-    /* Enable Flexbox for the list items */
+
     display: flex;
-    justify-content: center; /* Center the entire set of links horizontally */
-    flex-wrap: wrap; /* Allow items to wrap onto a new line if the screen is too narrow (desktop fallback) */
-    
-    /* Add a small vertical margin to separate the nav from other header elements */
+    justify-content: center; 
+    flex-wrap: wrap;
     margin-top: 1rem; 
 }
 
 nav ul li {
-    margin: 0 10px; /* Horizontal spacing between links */
+    margin: 0 10px; 
 }
 
 nav ul li a {
-    display: block; /* Make the link fill the LI space for a better click target */
-    padding: 8px 12px; /* Touch target padding */
-    text-decoration: none; /* Remove underline */
+    display: block; 
+    padding: 8px 12px; 
+    text-decoration: none; 
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--color-text-light); /* Use the light text variable */
+    color: var(--color-text-light); 
     transition: color 0.3s, background-color 0.3s;
     border-radius: 4px;
 }

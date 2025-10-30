@@ -77,48 +77,61 @@
     <div id="mensajeRegistro"></div>
 
     <script>
-        document.getElementById('registroForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+       const MOCKAPI_URL = 'https://6902fc56d0f10a340b221a9f.mockapi.io/form';
 
-            const cedula = document.getElementById('cedula').value.trim();
-            const contrasena = document.getElementById('contrasena').value.trim();
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim()
-            const mensaje = document.getElementById('mensajeRegistro');
+        document.getElementById('registroForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-            if (!cedula || !contrasena || !nombre || !email) {
-                mensaje.textContent = "Todos los campos son obligatorios.";
-                mensaje.style.color = "red";
-                return;
-            }
+            // 1. Capturar todos los valores del formulario
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const cedula = document.getElementById('cedula').value.trim();
+            const contrasena = document.getElementById('contrasena').value.trim();
+            const fecha = document.getElementById('fecha').value.trim(); // Nuevo campo capturado
 
-            fetch('https://68f27b1eb36f9750deecc6df.mockapi.io/IniciodeSesion', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    cedula: cedula,
-                    contrasena: contrasena,
-                    nombre: nombre,
-                    email: email,
-                })
-            })
-                .then(res => {
-                    if (!res.ok) throw new Error("No se pudo registrar el usuario.");
-                    return res.json();
-                })
-                .then(data => {
-                    mensaje.textContent = "Usuario registrado con éxito.";
-                    mensaje.style.color = "green";
-                    document.getElementById('registroForm').reset();
-                })
-                .catch(err => {
-                    console.error('Error al registrar:', err);
-                    mensaje.textContent = "Error al registrar. Intenta más tarde.";
-                    mensaje.style.color = "red";
-                });
-        });
+            const mensaje = document.getElementById('mensajeRegistro');
+
+            // 2. Validación de campos (mejorada)
+            if (!nombre || !email || !cedula || !contrasena || !fecha) {
+                mensaje.textContent = "Todos los campos son obligatorios.";
+                mensaje.style.color = "red";
+                return;
+            }
+
+            // 3. Solicitud FETCH (modificada para usar la URL y datos correctos)
+            fetch(MOCKAPI_URL, { // Usamos la URL de MockAPI
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    // 💡 Asegúrate que estos nombres (claves) coincidan con los campos de tu recurso en MockAPI
+                    nombre: nombre, 
+                    email: email,
+                    cedula: cedula,
+                    contrasena: contrasena,
+                    fechaNacimiento: fecha // Usamos un nombre descriptivo para la fecha
+                })
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error("No se pudo registrar el usuario. Código: " + res.status);
+                    return res.json();
+                })
+                .then(data => {
+                    // 4. Manejo de éxito
+                    mensaje.textContent = "✅ Usuario registrado con éxito. ID asignado: " + data.id;
+                    mensaje.style.color = "green";
+                    document.getElementById('registroForm').reset();
+                })
+                .catch(err => {
+                    // 5. Manejo de error
+                    console.error('Error al registrar:', err);
+                    mensaje.textContent = "❌ Error al registrar. Revisa la consola y tu API de MockAPI.";
+                    mensaje.style.color = "red";
+                });
+        });
+
+
     </script>
 
 
@@ -176,5 +189,4 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
