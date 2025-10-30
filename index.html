@@ -72,11 +72,13 @@
 
 
   <!-- Mensaje bienvenida -->
-  <div class="welcome-container  cardinicio">
-    <h3>Bienvenido a SGB HUB, tu sistema de gestión de becas virtual, acá encontrarás nuevas oportunidades, el
+  <div class="welcome-container">
+    <h3>Bienvenido a <span>SGB HUB</span><h3>
+      <p>tu sistema de gestión de becas virtual, acá encontrarás nuevas oportunidades, el
       formulario a través del cual podrás aplicar a ellas y el inicio de sesión en caso de que necesites una consulta
-      distinta, ¡bienvenido!
-    </h3>
+      distinta.</p>
+      <p>¡Comienza hoy y conoce tu próxima beca!</p>
+    <a href="assets/pages/formulario.html" class="btn-accionar">Ir al formulario de inscripcion</a>
   </div>
 
   <!-- Tarjetas -->
@@ -87,7 +89,8 @@
       </div>
       <div class="contenido">
         <h1>Listado 2022</h1>
-        <p> Haz click aqui para conocer el listado otorgado en primaria y bachillerato </p>
+        <p> Conoce el listado otorgado en primaria y bachillerato </p>
+        <a href="assets/pages/listadopersonas.html?year=2022" class="btn-ver-listado">VER LISTADO</a>
       </div>
     </div>
 
@@ -97,7 +100,8 @@
       </div>
       <div class="contenido">
         <h1>Listado 2023</h1>
-        <p> Haz click aqui para conocer el listado otorgado en primaria y bachillerato</p>
+        <p> Conoce el listado otorgado en primaria y bachillerato </p>
+        <a href="assets/pages/listadopersonas.html?year=2023" class="btn-ver-listado">VER LISTADO</a>
       </div>
     </div>
 
@@ -107,7 +111,8 @@
       </div>
       <div class="contenido">
         <h1>Listado 2024</h1>
-        <p> Haz click aqui para conocer el listado otorgado en primaria y bachillerato</p>
+        <p> Conoce el listado otorgado en primaria y bachillerato </p>
+        <a href="assets/pages/listadopersonas.html?year=2024" class="btn-ver-listado">VER LISTADO</a>
       </div>
     </div>
   </div>
@@ -181,7 +186,7 @@
       let contador = 0; /*inicia el contador en 0*/
       const incremento = Math.ceil(final / 100); /*calcula cuanto debe aumentar en cada paso para que el contador llegue al final y lo divide en 100, el math redondea*/
       const intervalo = setInterval(() => { /*crea un intervalo que ejecuta cada cierto tiempo, es decir incrementa*/
-        contador += incremento; /*suma el incremento al conador*/
+        contador += incremento; /*suma el incremento al contador*/
         if (contador >= final) { /*si el contador ya llego al final lo ajusta y detiene la animación*/
           contador = final;
           clearInterval(intervalo);
@@ -197,10 +202,6 @@
     });
   </script>
 
-  <!-- Agregar JS de Bootstrap antes del cierre de body -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 
 </body>
 </html>
