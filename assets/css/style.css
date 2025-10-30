@@ -1532,3 +1532,145 @@ BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
 }
 
 
+/* --------------------
+RESPONSIVE ADICIONAL (MÓVILES)
+-------------------- */
+
+/* Box sizing global para evitar cálculos extra y problemas de overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Imágenes y medios adaptativos */
+img, picture, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ajustes generales para tablets y móviles grandes */
+@media (max-width: 900px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* más compacto en pantallas pequeñas */
+    line-height: 1.2;
+    margin: 0.25rem 0 0.75rem;
+  }
+
+  .logo img {
+    width: 90px;
+    height: 90px;
+    float: none;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  /* Navegación vertical en móvil para mejor accesibilidad */
+  nav ul {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+
+  .barra-superior {
+    justify-content: space-between;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .contenedor-tarjetas {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .cardinicio {
+    max-width: 100%;
+    min-width: auto;
+    flex: 1 1 100%;
+  }
+
+  .carousel-item img {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .welcome-container {
+    margin: 15px;
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .tarjeta-perfil {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .formulario-perfil {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .numeros-estadisticas {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .whatsapp-btn {
+    width: 48px;
+    height: 48px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .contenedor {
+    padding: 20px;
+  }
+}
+
+/* Ajustes extra para teléfonos muy pequeños */
+@media (max-width: 420px) {
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .logo img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .boton, .nav-button, .register-button {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+
+  .carousel-item img {
+    height: 180px;
+  }
+}
+
+/* Pequeñas mejoras de accesibilidad: foco visible y tamaños clicables */
+a:focus, button:focus, .nav-button:focus {
+  outline: 3px solid rgba(52,152,219,0.25);
+  outline-offset: 2px;
+}
+
+
