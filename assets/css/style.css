@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@100..900&family=Story+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* --------------------
 VARIABLES GLOBALES (colores, fuentes)
@@ -14,10 +13,12 @@ VARIABLES GLOBALES (colores, fuentes)
   --color-button: #0056b3; 
   
 
-  --font-body: 'Roboto Slab', serif;
-  --font-heading: 'Archivo Black', cursive;
-  --font-footer: 'lobster', cursive;
+  
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Roboto', sans-serif;
+  --font-footer: 'lobster', serif;
 }
+
 
 
 /* --------------------
@@ -1481,3 +1482,55 @@ BOTONES NAV-BUTTON (clase .nav-button)
   font-weight: bold;
   color: #555;
 }
+/* --------------------
+BLOQUES DE "CÓMO APLICAR" (.comoaplicartarjetas)
+-------------------- */
+
+.comoaplicartarjetas {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px; 
+    margin: 0 auto; 
+}
+
+.comoaplicartarjetas .step {
+    background-color: #ffffff;     
+    border: 1px solid #e0e0e0; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); 
+    padding: 25px; 
+    width: 80%;     
+    max-width: 800px; 
+    min-width: 280px; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;     
+    align-items: center; 
+    transition: transform 0.2s ease-in-out; 
+}
+
+.comoaplicartarjetas .step:hover {
+    transform: translateY(-5px); 
+}
+
+.comoaplicartarjetas .step i {
+    font-size: 3em; 
+    color: #007bff; 
+    margin-bottom: 15px; 
+}
+
+.comoaplicartarjetas .step h2 {
+    font-size: 1.5em; 
+    color: #333333; 
+    margin-bottom: 10px; 
+}
+
+.comoaplicartarjetas .step p {
+    font-size: 1em; 
+    color: #666666; 
+    line-height: 1.6;
+}
+
+
