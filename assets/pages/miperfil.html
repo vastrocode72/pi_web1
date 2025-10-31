@@ -17,45 +17,51 @@
 </head>
 
 <body>
-     <!-- Header complete -->          
-    <header class="header">
-      <div>
-        <div class="barra-superior">
-        </div>
-        <div class="logo">
-            <a href="index.html">
-                <img src="../imagenes/logo.png" alt="logo">
-            </a>
-        </div>
-      </div>  
-      <h1>Sistema de Gestión de Becas</h1>
-      <nav>
-        <ul>
-          <li><a href="../../index.html">Inicio</a></li>
-          <li><a href="../pages/equipo.html">Equipo</a></li>
-          <li><a href="../pages/comoaplicar.html">Como aplicar</a></li>
-          <li><a href="../pages/cronograma.html">Cronograma</a></li>
-        </ul>
-      </nav>
-    </header>
+  <!-- Header complete -->
+  <header class="header">
+    <div>
+      <div class="barra-superior">
+        <button id="logoutBtn" class="nav-button logout-button" style="display: none;">CERRAR SESION</button>
+      </div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="../imagenes/logo.png" alt="logo">
+        </a>
+      </div>
+
+    </div>
+    <h1>Sistema de Gestión de Becas</h1>
+    <nav>
+      <ul>
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../pages/equipo.html">Equipo</a></li>
+        <li><a href="../pages/acercade.html">Acerca de</a></li>
+        <li><a href="../pages/comoaplicar.html">Como aplicar</a></li>
+        <li><a href="../pages/cronograma.html">Cronograma</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
   <!-- CONTENIDO PRINCIPAL -->
   <main class="contenedor">
     <section class="tarjeta-perfil">
-      
+
       <!-- FOTO DE PERFIL -->
       <div class="foto-perfil">
-        <img id="imagenPerfil" src="imagenes/avatar.png" alt="Foto de perfil del usuario">
+        <img id="imagenPerfil" src="/assets/imagenes/usuario.png" alt="Foto de perfil del usuario">
         <input type="file" id="cambiarFoto" accept="image/*" hidden>
         <button class="btn-cambiar" id="botonCambiar">Cambiar foto</button>
       </div>
 
       <!-- INFORMACIÓN DEL PERFIL -->
       <div class="info-perfil">
-        <h2>Información del Usuario</h2>
+        <h2>Información Usuario</h2>
         <form class="formulario-perfil">
           <div class="campo">
             <label>Nombre completo:</label>
-            <input type="text" value="Usuario logeado" readonly>
+            <input type="text" value="Sandra González" readonly>
           </div>
 
           <div class="campo">
@@ -65,12 +71,12 @@
 
           <div class="campo">
             <label>Correo electrónico:</label>
-            <input type="email" value="user@example.com" readonly>
+            <input type="email" value="sandra@example.com" readonly>
           </div>
 
           <div class="campo">
             <label>Programa académico:</label>
-            <input type="text" value="Software" readonly>
+            <input type="text" value="Ingeniería de Sistemas" readonly>
           </div>
 
           <div class="campo">
@@ -83,16 +89,14 @@
             <input type="text" value="Activa" readonly>
           </div>
         </form>
-            <div class="boton-3">
-        <button class="boton" onclick="window.location.href='/assets/pages/consulta.html'">Consulta el estado de tu
-            gestión acá</button>
-        <br><br><br>
-    </div>
       </div>
+          <div class="beca-perfil">
+      <button id="verEstadoBtn" class="btn-cambiar"><a href="estadode.html"></a>ESTADO DE MI GESTIÓN</button>
+    </div>
     </section>
   </main>
 
- <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-columns">
       <div class="column">
@@ -121,8 +125,7 @@
         <h4>Redes sociales</h4>
         <div class="social-links">
           <a href="https://www.instagram.com/"><img src="../imagenes/logo_instagram.png" alt="Instagram"></a>
-          <a href="https://www.facebook.com/?locale=es_LA"><img src="../imagenes/logo_facebook.png"
-              alt="Facebook"></a>
+          <a href="https://www.facebook.com/?locale=es_LA"><img src="../imagenes/logo_facebook.png" alt="Facebook"></a>
           <a href="https://x.com/i/flow/login?lang=es"><img src="../imagenes/Logo X.jpg" alt="X"></a>
         </div>
       </div>
@@ -139,6 +142,11 @@
     const inputFoto = document.getElementById('cambiarFoto');
     const imagenPerfil = document.getElementById('imagenPerfil');
 
+    const imagenFija = localStorage.getItem('imagenPerfil');
+    if (imagenFija) {
+      imagenPerfil.src = imagenFija;
+    }
+
     botonCambiar.addEventListener('click', () => {
       inputFoto.click();
     });
@@ -153,7 +161,37 @@
         lector.readAsDataURL(archivo);
       }
     });
+
+    const usuarioActivo = JSON.parse(localStorage.getItem("usuarioActivo"));
+
+    if (!usuarioActivo) {
+      // Si no hay usuario activo, redirigir al login
+      window.location.href = "inicio_sesion.html"; // ajusta la ruta
+    } else {
+      // Rellenar datos del perfil
+      document.getElementById("imagenPerfil").src = usuarioActivo.foto || "/assets/imagenes/usuario.png";
+      document.querySelector(".info-perfil input[value='Sandra González']").value = usuarioActivo.nombre;
+      // ... y así con los demás campos
+
+      // Mostrar botón de cerrar sesión
+      const logoutBtn = document.getElementById("logoutBtn");
+      logoutBtn.style.display = "inline-block";
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("usuarioActivo");
+        window.location.href = "inicio_sesion.html";
+      });
+    }
+
+    document.getElementById("verEstadoBtn").addEventListener("click", () => {
+      window.location.href = "estadode.html";
+    });
+
   </script>
+  <div>
+    <a href="https://wa.me/+573226650351" class="whatsapp-btn" target="_blank">
+      <img src="/assets/imagenes/logo_whatsapp.png" alt="icono whatsapp"></a>
+  </div>
 
 </body>
+
 </html>
